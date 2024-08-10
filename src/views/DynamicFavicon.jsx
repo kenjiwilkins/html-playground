@@ -3,6 +3,7 @@ import defaultIcon from "../assets/default.svg";
 import successIcon from "../assets/success.svg";
 import failIcon from "../assets/fail.svg";
 import defaultRedIcon from "../assets/default-red.svg";
+import Button from "@/components/Button";
 import { useRef } from "react";
 
 function DynamicFavicon() {
@@ -49,25 +50,25 @@ function DynamicFavicon() {
       <div className="flex flex-col gap-2">
         <h1>Dynamic Favicon</h1>
         <div className="flex gap-2">
-          <button
+          <Button
             disabled={isSetmodeSame("default")}
             onClick={() => setMode("default")}
           >
             default
-          </button>
-          <button
+          </Button>
+          <Button
             disabled={isSetmodeSame("success")}
             onClick={() => setMode("success")}
           >
             success
-          </button>
-          <button
+          </Button>
+          <Button
             disabled={isSetmodeSame("fail")}
             onClick={() => setMode("fail")}
           >
             fail
-          </button>
-          <button onClick={updateFaviconRed}>interval</button>
+          </Button>
+          <Button onClick={updateFaviconRed}>interval</Button>
         </div>
       </div>
     </>

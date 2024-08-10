@@ -1,6 +1,6 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import "./Progress.css";
-import { useEffect } from "react";
+import Button from "@/components/Button";
 
 function Progress() {
   const [progress, setProgress] = useState(60);
@@ -62,19 +62,19 @@ function Progress() {
         {progress}%
       </label>
       <div className="flex items-center gap-2">
-        <button
+        <Button
           className="p-2 bg-gray-900 text-white rounded"
           onClick={() => handleProgressChange(progress - 10)}
         >
           -10
-        </button>
+        </Button>
         <progress id="progress-1" value={progress} max="100"></progress>
-        <button
+        <Button
           className="p-2 bg-gray-900 text-white rounded"
           onClick={() => handleProgressChange(progress + 10)}
         >
           +10
-        </button>
+        </Button>
       </div>
       <div className="flex flex-col items-center align-center">
         <h2>Progress without value</h2>
@@ -84,13 +84,13 @@ function Progress() {
           aria-describedby="progress-2"
           aria-busy={!isLoadStateComplete}
         >
-          <button
+          <Button
             className="p-2 bg-gray-900 disabled:bg-gray-300  text-white rounded"
             disabled={!isLoadStateComplete}
             onClick={() => updateProgress()}
           >
             Start
-          </button>
+          </Button>
           {!isLoadStateComplete && (
             <progress
               aria-label="file load progress"
