@@ -46,26 +46,29 @@ function DynamicFavicon() {
   }, [mode]);
   return (
     <>
-      <div className="flex gap-2">
-        <button
-          disabled={isSetmodeSame("default")}
-          onClick={() => setMode("default")}
-        >
-          default
-        </button>
-        <button
-          disabled={isSetmodeSame("success")}
-          onClick={() => setMode("success")}
-        >
-          success
-        </button>
-        <button
-          disabled={isSetmodeSame("fail")}
-          onClick={() => setMode("fail")}
-        >
-          fail
-        </button>
-        <button onClick={updateFaviconRed}>interval</button>
+      <div className="flex flex-col gap-2">
+        <h1>Dynamic Favicon</h1>
+        <div className="flex gap-2">
+          <button
+            disabled={isSetmodeSame("default")}
+            onClick={() => setMode("default")}
+          >
+            default
+          </button>
+          <button
+            disabled={isSetmodeSame("success")}
+            onClick={() => setMode("success")}
+          >
+            success
+          </button>
+          <button
+            disabled={isSetmodeSame("fail")}
+            onClick={() => setMode("fail")}
+          >
+            fail
+          </button>
+          <button onClick={updateFaviconRed}>interval</button>
+        </div>
       </div>
     </>
   );
