@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import "./Progress.css";
+import "./progress.css";
 import Button from "@/components/Button";
 
 function Progress() {
@@ -30,16 +30,6 @@ function Progress() {
 
   // draggable progress bar
   const [dragProgress, setDragProgress] = useState(0);
-  const dragProgressRef = useRef(null);
-  const dragProgressContainerRef = useRef(null);
-  function handleDragStart(e) {
-    const rect = e.target.getBoundingClientRect();
-    const offsetX = e.clientX - rect.left;
-    const progress = (offsetX / rect.width) * 100;
-    setDragProgress(progress);
-    e.target.addEventListener("mousemove", handleDrag);
-    e.target.addEventListener("mouseup", handleDragEnd);
-  }
   function handleDrag(e) {
     const rect = e.target.getBoundingClientRect();
     const offsetX = e.clientX - rect.left;
@@ -51,8 +41,19 @@ function Progress() {
     e.target.removeEventListener("mouseup", handleDragEnd);
   }
   useEffect(() => {
+    function handleDragStart(e) {
+      const rect = e.target.getBoundingClientRect();
+      const offsetX = e.clientX - rect.left;
+      const progress = (offsetX / rect.width) * 100;
+      setDragProgress(progress);
+      e.target.addEventListener("mousemove", handleDrag);
+      e.target.addEventListener("mouseup", handleDragEnd);
+    }
     const progressBarElement = document.querySelector(".progress-bar");
     progressBarElement.addEventListener("mousedown", handleDragStart);
+    return () => {
+      progressBarElement.removeEventListener("mousedown", handleDragStart);
+    };
   }, []);
 
   return (
