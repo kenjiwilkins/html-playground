@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import PropTypes from "prop-types";
 
 function Button({ children, disabled, onClick }) {
   return (
@@ -8,11 +9,21 @@ function Button({ children, disabled, onClick }) {
         disabled ? "bg-gray-300" : "bg-blue-600"
       )}
       disabled={disabled}
-      onClick={onClick}
+      onClick={() => {
+        if (onClick && !disabled) {
+          onClick();
+        }
+      }}
     >
       {children}
     </button>
   );
 }
+
+Button.propTypes = {
+  children: PropTypes.node.isRequired,
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func,
+};
 
 export default Button;
