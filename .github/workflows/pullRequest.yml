@@ -3,7 +3,9 @@ name: Pull Request Sync Workflow
 on:
   pull_request:
     types:
+      - opened
       - synchronize
+      - reopened
 
 jobs:
   cache-and-install:
