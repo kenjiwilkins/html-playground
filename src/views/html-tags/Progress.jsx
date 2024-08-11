@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import "./Progress.css";
+import "./progress.css";
 import Button from "@/components/Button";
 
 function Progress() {
