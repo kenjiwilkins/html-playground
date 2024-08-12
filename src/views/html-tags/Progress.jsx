@@ -30,29 +30,31 @@ function Progress() {
 
   // draggable progress bar
   const [dragProgress, setDragProgress] = useState(0);
+  const progressBarElement = useRef(null);
   function handleDrag(e) {
-    const rect = e.target.getBoundingClientRect();
+    const rect = progressBarElement.current.getBoundingClientRect();
     const offsetX = e.clientX - rect.left;
     const progress = (offsetX / rect.width) * 100;
     setDragProgress(progress);
   }
-  function handleDragEnd(e) {
-    e.target.removeEventListener("mousemove", handleDrag);
-    e.target.removeEventListener("mouseup", handleDragEnd);
+  function handleDragEnd() {
+    document.removeEventListener("pointermove", handleDrag);
+    document.removeEventListener("pointerup", handleDragEnd);
   }
   useEffect(() => {
+    if (!progressBarElement.current) return;
+    const progressBar = progressBarElement.current;
     function handleDragStart(e) {
-      const rect = e.target.getBoundingClientRect();
+      const rect = progressBarElement.current.getBoundingClientRect();
       const offsetX = e.clientX - rect.left;
       const progress = (offsetX / rect.width) * 100;
       setDragProgress(progress);
-      e.target.addEventListener("mousemove", handleDrag);
-      e.target.addEventListener("mouseup", handleDragEnd);
+      document.addEventListener("pointermove", handleDrag);
+      document.addEventListener("pointerup", handleDragEnd);
     }
-    const progressBarElement = document.querySelector(".progress-bar");
-    progressBarElement.addEventListener("mousedown", handleDragStart);
+    progressBar.addEventListener("pointerdown", handleDragStart);
     return () => {
-      progressBarElement.removeEventListener("mousedown", handleDragStart);
+      progressBar.removeEventListener("pointerdown", handleDragStart);
     };
   }, []);
 
@@ -110,6 +112,7 @@ function Progress() {
         <h2>Draggable</h2>
         <div className="flex items-center gap-2">
           <progress
+            ref={progressBarElement}
             className="progress progress-bar"
             value={dragProgress}
             max="100"
