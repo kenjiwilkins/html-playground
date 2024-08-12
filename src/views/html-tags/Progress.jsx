@@ -38,8 +38,8 @@ function Progress() {
     setDragProgress(progress);
   }
   function handleDragEnd(e) {
-    document.removeEventListener("mousemove", handleDrag);
-    document.removeEventListener("mouseup", handleDragEnd);
+    document.removeEventListener("pointermove", handleDrag);
+    document.removeEventListener("pointerup", handleDragEnd);
   }
   useEffect(() => {
     if (!progressBarElement.current) return;
@@ -48,13 +48,13 @@ function Progress() {
       const offsetX = e.clientX - rect.left;
       const progress = (offsetX / rect.width) * 100;
       setDragProgress(progress);
-      document.addEventListener("mousemove", handleDrag);
-      document.addEventListener("mouseup", handleDragEnd);
+      document.addEventListener("pointermove", handleDrag);
+      document.addEventListener("pointerup", handleDragEnd);
     }
-    progressBarElement.current.addEventListener("mousedown", handleDragStart);
+    progressBarElement.current.addEventListener("pointerdown", handleDragStart);
     return () => {
       progressBarElement.current.removeEventListener(
-        "mousedown",
+        "pointerdown",
         handleDragStart
       );
     };
