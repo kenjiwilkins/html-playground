@@ -4,6 +4,8 @@ import HtmlTagsIndex from "./views/html-tags/Index";
 import JsScriptsIndex from "./views/js-scripts/Index";
 import Progress from "./views/html-tags/Progress";
 import DynamicFavicon from "./views/DynamicFavicon";
+import Anchor from "./views/html-tags/Anchor";
+import Abbr from "./views/html-tags/Abbr";
 
 function NotFound() {
   return <h1>Not Found</h1>;
