@@ -3,7 +3,7 @@ import defaultIcon from "../assets/default.svg";
 import successIcon from "../assets/success.svg";
 import failIcon from "../assets/fail.svg";
 import defaultRedIcon from "../assets/default-red.svg";
-import Button from "@/components/Button";
+import { Button, Card, Container } from "../components";
 import { useRef } from "react";
 
 function DynamicFavicon() {
@@ -47,30 +47,32 @@ function DynamicFavicon() {
   }, [mode]);
   return (
     <>
-      <div className="flex flex-col gap-2">
-        <h1>Dynamic Favicon</h1>
-        <div className="flex gap-2">
-          <Button
-            disabled={isSetmodeSame("default")}
-            onClick={() => setMode("default")}
-          >
-            default
-          </Button>
-          <Button
-            disabled={isSetmodeSame("success")}
-            onClick={() => setMode("success")}
-          >
-            success
-          </Button>
-          <Button
-            disabled={isSetmodeSame("fail")}
-            onClick={() => setMode("fail")}
-          >
-            fail
-          </Button>
-          <Button onClick={updateFaviconRed}>interval</Button>
-        </div>
-      </div>
+      <Container title="Dynamic Favicon">
+        <Card>
+          <h2>Favicon controller</h2>
+          <div className="flex gap-2">
+            <Button
+              disabled={isSetmodeSame("default")}
+              onClick={() => setMode("default")}
+            >
+              default
+            </Button>
+            <Button
+              disabled={isSetmodeSame("success")}
+              onClick={() => setMode("success")}
+            >
+              success
+            </Button>
+            <Button
+              disabled={isSetmodeSame("fail")}
+              onClick={() => setMode("fail")}
+            >
+              fail
+            </Button>
+            <Button onClick={updateFaviconRed}>interval</Button>
+          </div>
+        </Card>
+      </Container>
     </>
   );
 }
