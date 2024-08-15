@@ -90,7 +90,8 @@ function Anchor() {
           </a>
           <p>
             <code>
-              rel="noopener noreferrer" is not necessary for newer browsers.
+              rel=&quot;noopener noreferrer&quot; is not necessary for newer
+              browsers.
             </code>
           </p>
 
