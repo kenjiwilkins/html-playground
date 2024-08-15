@@ -1,4 +1,5 @@
 import { Container, Card } from "../../components";
+import PropTypes from "prop-types";
 
 function Abbr({ title, children }) {
   return (
@@ -7,6 +8,11 @@ function Abbr({ title, children }) {
     </abbr>
   );
 }
+
+Abbr.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
 
 function AbbrPage() {
   return (
