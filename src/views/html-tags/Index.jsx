@@ -7,14 +7,20 @@ function Index() {
   }, []);
   return (
     <>
-      <div className="flex">
+      <aside className="flex">
         <ul className="p-4 pr-6 w-48">
+          <li>
+            <Link to="/html-tags/anchor">{"<a> Tag"}</Link>
+          </li>
+          <li>
+            <Link to="/html-tags/abbr">{"<abbr> Tag"}</Link>
+          </li>
           <li>
             <Link to="/html-tags/progress">{"<progress> Tag"}</Link>
           </li>
         </ul>
         <Outlet />
-      </div>
+      </aside>
     </>
   );
 }
