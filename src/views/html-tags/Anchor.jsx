@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { Card } from "../../components/Card";
 import sampleImage from "../../assets/sample.jpeg";
 import anchorHtml from "./anchor.html";
+import { Container } from "../../components";
 
 const basicLink = "https://example.com";
 const emailLink = "mailto:m.bluth@example.com";
@@ -26,8 +27,7 @@ function Anchor() {
   }, [egOne]);
 
   return (
-    <section className="flex flex-col gap-4">
-      <h1>Anchor Tag</h1>
+    <Container title="Anchor Tag">
       <Card>
         <div className="flex flex-col gap-1">
           <h2>Basic Anchor</h2>
@@ -100,7 +100,7 @@ function Anchor() {
           </div>
         </div>
       </Card>
-    </section>
+    </Container>
   );
 }
 

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import "./progress.css";
-import Button from "@/components/Button";
+import { Button } from "@/components/Button";
 
 function Progress() {
   const [progress, setProgress] = useState(60);

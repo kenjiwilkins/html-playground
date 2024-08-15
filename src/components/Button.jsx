@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import PropTypes from "prop-types";
 
-function Button({ children, disabled, onClick }) {
+export function Button({ children, disabled, onClick }) {
   return (
     <button
       className={classNames(
@@ -25,5 +25,3 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   onClick: PropTypes.func,
 };
-
-export default Button;
