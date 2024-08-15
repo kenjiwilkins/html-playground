@@ -17,6 +17,8 @@ function App() {
         <Route path="/" element={<Index />}>
           <Route path="/html-tags" element={<HtmlTagsIndex />}>
             <Route path="/html-tags/progress" element={<Progress />} />
+            <Route path="/html-tags/anchor" element={<Anchor />} />
+            <Route path="/html-tags/abbr" element={<Abbr />} />
           </Route>
           <Route path="/js-scripts" element={<JsScriptsIndex />}>
             <Route
