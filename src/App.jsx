@@ -7,6 +7,7 @@ import DynamicFavicon from "./views/DynamicFavicon";
 import Anchor from "./views/html-tags/Anchor";
 import Abbr from "./views/html-tags/Abbr";
 import Address from "./views/html-tags/Address";
+import Area from "./views/html-tags/Area";
 
 function NotFound() {
   return <h1>Not Found</h1>;
@@ -23,6 +24,7 @@ function App() {
             <Route path="/html-tags/anchor" element={<Anchor />} />
             <Route path="/html-tags/abbr" element={<Abbr />} />
             <Route path="/html-tags/address" element={<Address />} />
+            <Route path="/html-tags/area" element={<Area />} />
           </Route>
           <Route path="/js-scripts" element={<JsScriptsIndex />}>
             <Route
