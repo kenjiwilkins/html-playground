@@ -19,6 +19,9 @@ function Index() {
             <Link to="/html-tags/address">{"<address> Tag"}</Link>
           </li>
           <li>
+            <Link to="/html-tags/area">{"<area> Tag"}</Link>
+          </li>
+          <li>
             <Link to="/html-tags/progress">{"<progress> Tag"}</Link>
           </li>
         </ul>
