@@ -1,39 +1,51 @@
-import { useState, useEffect, useRef } from "react";
+import { useCallback, useState, useEffect, useRef } from "react";
 import { Container, Card } from "../../components";
 import textImage from "../../assets/googleYahoo.png";
 
 function ImageMap() {
-  const [coords, setCoords] = useState({
+  const initialCoords = {
     google: [23, 32, 237, 98],
     yahoo: [259, 32, 448, 83],
+  };
+  const [coords, setCoords] = useState({
+    google: initialCoords.google,
+    yahoo: initialCoords.yahoo,
   });
   const imgRef = useRef(null);
-  const updateCoordinates = () => {
-    if (imgRef.current) {
-      const img = imgRef.current;
-      const widthRatio = img.clientWidth / img.naturalWidth;
-      const heightRatio = img.clientHeight / img.naturalHeight;
-
-      setCoords({
-        google: coords.google.map((coord, index) =>
-          index % 2 === 0 ? coord * widthRatio : coord * heightRatio
-        ),
-        yahoo: coords.yahoo.map((coord, index) =>
-          index % 2 === 0 ? coord * widthRatio : coord * heightRatio
-        ),
-      });
-    }
-  };
+  const updateCoordinates = useCallback(() => {
+    if (!imgRef.current) return;
+    const img = imgRef.current;
+    const widthRatio = img.clientWidth / img.naturalWidth;
+    const heightRatio = img.clientHeight / img.naturalHeight;
+    const calculateCoords = (coords) => {
+      return coords.map((coord, index) =>
+        index % 2 === 0 ? coord * widthRatio : coord * heightRatio
+      );
+    };
+    setCoords({
+      google: calculateCoords(initialCoords.google),
+      yahoo: calculateCoords(initialCoords.yahoo),
+    });
+  }, [initialCoords.google, initialCoords.yahoo]);
   useEffect(() => {
     window.addEventListener("resize", updateCoordinates);
-
+    const handleLoad = () => {
+      updateCoordinates();
+    };
+    const img = imgRef.current;
+    if (img) {
+      img.addEventListener("load", handleLoad);
+    }
     // Initial calculation on component mount
     updateCoordinates();
 
     return () => {
       window.removeEventListener("resize", updateCoordinates);
+      if (img) {
+        img.removeEventListener("load", handleLoad);
+      }
     };
-  }, []);
+  }, [updateCoordinates]);
   return (
     <Container title="Responsive Image Map" full>
       <Card>
