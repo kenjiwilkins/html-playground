@@ -10,6 +10,7 @@ import Abbr from "./views/html-tags/Abbr";
 import Address from "./views/html-tags/Address";
 import Area from "./views/html-tags/Area";
 import Article from "./views/html-tags/Article";
+import Aside from "./views/html-tags/Aside";
 import ImageMap from "./views/responsive-design/ImageMap";
 
 function NotFound() {
@@ -29,6 +30,7 @@ function App() {
             <Route path="/html-tags/address" element={<Address />} />
             <Route path="/html-tags/area" element={<Area />} />
             <Route path="/html-tags/article" element={<Article />} />
+            <Route path="/html-tags/aside" element={<Aside />} />
           </Route>
           <Route path="/js-scripts" element={<JsScriptsIndex />}>
             <Route
