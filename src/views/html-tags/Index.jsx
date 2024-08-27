@@ -28,6 +28,9 @@ function Index() {
             <Link to="/html-tags/aside">{"<aside> Tag"}</Link>
           </li>
           <li>
+            <Link to="/html-tags/audio">{"<audio> Tag"}</Link>
+          </li>
+          <li>
             <Link to="/html-tags/progress">{"<progress> Tag"}</Link>
           </li>
         </ul>
