@@ -16,7 +16,7 @@ function BringAttention() {
     <Container title="Bring attention tag">
       <Card>
         <h2>Bring Attention</h2>
-        <div id="word select">
+        <div id="word-select">
           <label htmlFor="word">Select a word:</label>
           <select
             id="word"
