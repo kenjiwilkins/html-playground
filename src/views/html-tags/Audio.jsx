@@ -35,22 +35,32 @@ function AudioPage() {
     audio.addEventListener("seeking", (event) => {
       console.log("seeking", event);
     });
-    return () => {};
+    return () => {
+      audio.removeEventListener("play");
+      audio.removeEventListener("pause");
+      audio.removeEventListener("ended");
+      audio.removeEventListener("canplay");
+      audio.removeEventListener("canplaythrough");
+      audio.removeEventListener("timeupdate");
+      audio.removeEventListener("volumechange");
+      audio.removeEventListener("seeked");
+      audio.removeEventListener("seeking");
+    };
   }, [audioRef]);
   const [isPlaying, setIsPlaying] = useState(false);
   const [time, setTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const currentTime = useMemo(() => {
+  function formatTime(time) {
     // format time to minutes and seconds
-    const minutes = (time/60).toFixed(0).toString().padStart(2, '0');
-    const seconds = (time % 60).toFixed(0).toString().padStart(2, '0');
+    const minutes = (time / 60).toFixed(0).toString().padStart(2, "0");
+    const seconds = (time % 60).toFixed(0).toString().padStart(2, "0");
     return `${minutes}:${seconds}`;
+  }
+  const currentTime = useMemo(() => {
+    return formatTime(time);
   },[time])
   const totalDuration = useMemo(() => {
-    // format time to minutes and seconds
-    const minutes = (duration / 60).toFixed(0).toString().padStart(2, '0');
-    const seconds = (duration % 60).toFixed(0).toString().padStart(2, '0');
-    return `${minutes}:${seconds}`;
+    return formatTime(duration);
   },[duration])
   function play() {
     const audio = customAudioRef.current;
@@ -72,10 +82,7 @@ function AudioPage() {
       setIsPlaying(false);
     });
     return () => {
-      audio.removeEventListener("timeupdate", () => {
-        setTime(audio.currentTime);
-        setDuration(audio.duration);
-      });
+      audio.removeEventListener("timeupdate");
     };
   }, [customAudioRef]);
 
@@ -111,7 +118,7 @@ function AudioPage() {
           <figcaption>音楽素材提供:Music-Note.jp</figcaption>
         </figure>
         <p>
-          Preload="none" will not load the audio file until the user clicks play
+          Preload=&quot;none&quot; will not load the audio file until the user clicks play
         </p>
       </Card>
       <Card>
