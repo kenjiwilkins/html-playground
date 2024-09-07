@@ -26,7 +26,7 @@ function BasePage() {
       <Card>
         <h2>HTML</h2>
         <pre>{strippedHtml}</pre>
-        <p>Be aware that the base tag doesn't affect Open Graph meta tags.</p>
+        <p>Be aware that the base tag does not affect Open Graph meta tags.</p>
         <p>The OG meta tag must be in the absolute URL format.</p>
       </Card>
     </Container>
