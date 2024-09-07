@@ -13,6 +13,7 @@ import Article from "./views/html-tags/Article";
 import Aside from "./views/html-tags/Aside";
 import Audio from "./views/html-tags/Audio";
 import Bring from "./views/html-tags/Bring";
+import Base from "./views/html-tags/Base";
 import ImageMap from "./views/responsive-design/ImageMap";
 
 function NotFound() {
@@ -35,6 +36,7 @@ function App() {
             <Route path="/html-tags/aside" element={<Aside />} />
             <Route path="/html-tags/audio" element={<Audio />} />
             <Route path="/html-tags/bring" element={<Bring />} />
+            <Route path="/html-tags/base" element={<Base />} />
           </Route>
           <Route path="/js-scripts" element={<JsScriptsIndex />}>
             <Route
