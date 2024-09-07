@@ -3,7 +3,11 @@ import { fakerAR, fakerEN } from "@faker-js/faker";
 
 function Bidirectional() {
   const today = new Date();
-  const fiveYearsAgo = today.setFullYear(today.getFullYear() - 5);
+  const fiveYearsAgo = new Date(
+    today.getFullYear() - 5,
+    today.getMonth(),
+    today.getDate()
+  );
   const formattedDate = new Intl.DateTimeFormat("en-US").format(fiveYearsAgo);
   return (
     <Container title="Bidirectional">
