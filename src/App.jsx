@@ -14,6 +14,7 @@ import Aside from "./views/html-tags/Aside";
 import Audio from "./views/html-tags/Audio";
 import Bring from "./views/html-tags/Bring";
 import Base from "./views/html-tags/Base";
+import BidirectionalIsolate from "./views/html-tags/BidirectionalIsolate";
 import ImageMap from "./views/responsive-design/ImageMap";
 
 function NotFound() {
@@ -37,6 +38,7 @@ function App() {
             <Route path="/html-tags/audio" element={<Audio />} />
             <Route path="/html-tags/bring" element={<Bring />} />
             <Route path="/html-tags/base" element={<Base />} />
+            <Route path="/html-tags/bdi" element={<BidirectionalIsolate />} />
           </Route>
           <Route path="/js-scripts" element={<JsScriptsIndex />}>
             <Route
