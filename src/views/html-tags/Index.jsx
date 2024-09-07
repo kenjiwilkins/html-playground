@@ -40,6 +40,9 @@ function Index() {
             <Link to="/html-tags/bdi">{"<bdi> Tag"}</Link>
           </li>
           <li>
+            <Link to="/html-tags/bdo">{"<bdo> Tag"}</Link>
+          </li>
+          <li>
             <Link to="/html-tags/progress">{"<progress> Tag"}</Link>
           </li>
         </ul>
