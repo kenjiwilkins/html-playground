@@ -16,6 +16,7 @@ import Bring from "./views/html-tags/Bring";
 import Base from "./views/html-tags/Base";
 import BidirectionalIsolate from "./views/html-tags/BidirectionalIsolate";
 import BidirectionalOverride from "./views/html-tags/BidirectionalOverride";
+import Blockquote from "./views/html-tags/Blockquote";
 import ImageMap from "./views/responsive-design/ImageMap";
 
 function NotFound() {
@@ -41,6 +42,7 @@ function App() {
             <Route path="/html-tags/base" element={<Base />} />
             <Route path="/html-tags/bdi" element={<BidirectionalIsolate />} />
             <Route path="/html-tags/bdo" element={<BidirectionalOverride />} />
+            <Route path="/html-tags/blockquote" element={<Blockquote />} />
           </Route>
           <Route path="/js-scripts" element={<JsScriptsIndex />}>
             <Route
