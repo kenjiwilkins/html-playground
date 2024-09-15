@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import classNames from "classnames";
 import { Container, Card } from "../../components";
 
@@ -24,16 +24,19 @@ function useEventLists() {
     { name: "unload", triggered: false },
   ];
   const [events, setEvents] = useState(eventList);
-  function alertEvent(eventName, event) {
-    console.log(eventName, event);
-    const index = events.findIndex((e) => e.name === eventName);
-    if (events[index].triggered) return;
-    setEvents((prev) => {
-      const copy = [...prev];
-      copy[index].triggered = true;
-      return copy;
-    });
-  }
+  const alertEvent = useCallback(
+    (eventName, event) => {
+      console.log(eventName, event);
+      const index = events.findIndex((e) => e.name === eventName);
+      if (events[index].triggered) return;
+      setEvents((prev) => {
+        const copy = [...prev];
+        copy[index].triggered = true;
+        return copy;
+      });
+    },
+    [events]
+  );
   useEffect(() => {
     window.addEventListener("beforeprint", (event) => {
       alertEvent("beforeprint", event);
