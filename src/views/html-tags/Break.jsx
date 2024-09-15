@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 import classNames from "classnames";
 import { Container, Card } from "../../components";
 import { faker } from "@faker-js/faker";
