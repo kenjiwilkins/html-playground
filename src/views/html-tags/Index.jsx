@@ -46,6 +46,9 @@ function Index() {
             <Link to="/html-tags/blockquote">{"<blockquote> Tag"}</Link>
           </li>
           <li>
+            <Link to="/html-tags/body">{"<body> Tag"}</Link>
+          </li>
+          <li>
             <Link to="/html-tags/progress">{"<progress> Tag"}</Link>
           </li>
         </ul>
