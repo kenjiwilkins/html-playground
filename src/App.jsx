@@ -3,7 +3,6 @@ import Index from "./views/Index";
 import HtmlTagsIndex from "./views/html-tags/Index";
 import JsScriptsIndex from "./views/js-scripts/Index";
 import ResponsiveIndex from "./views/responsive-design/Index";
-import Progress from "./views/html-tags/Progress";
 import DynamicFavicon from "./views/DynamicFavicon";
 import Anchor from "./views/html-tags/Anchor";
 import Abbr from "./views/html-tags/Abbr";
@@ -17,6 +16,8 @@ import Base from "./views/html-tags/Base";
 import BidirectionalIsolate from "./views/html-tags/BidirectionalIsolate";
 import BidirectionalOverride from "./views/html-tags/BidirectionalOverride";
 import Blockquote from "./views/html-tags/Blockquote";
+import Body from "./views/html-tags/Body";
+import Progress from "./views/html-tags/Progress";
 import ImageMap from "./views/responsive-design/ImageMap";
 
 function NotFound() {
@@ -30,7 +31,6 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Index />}>
           <Route path="/html-tags" element={<HtmlTagsIndex />}>
-            <Route path="/html-tags/progress" element={<Progress />} />
             <Route path="/html-tags/anchor" element={<Anchor />} />
             <Route path="/html-tags/abbr" element={<Abbr />} />
             <Route path="/html-tags/address" element={<Address />} />
@@ -43,6 +43,8 @@ function App() {
             <Route path="/html-tags/bdi" element={<BidirectionalIsolate />} />
             <Route path="/html-tags/bdo" element={<BidirectionalOverride />} />
             <Route path="/html-tags/blockquote" element={<Blockquote />} />
+            <Route path="/html-tags/body" element={<Body />} />
+            <Route path="/html-tags/progress" element={<Progress />} />
           </Route>
           <Route path="/js-scripts" element={<JsScriptsIndex />}>
             <Route
