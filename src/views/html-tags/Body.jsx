@@ -89,7 +89,7 @@ function useEventLists() {
     window.addEventListener("unload", (event) => {
       alertEvent("unload", event);
     });
-  }, []);
+  }, [alertEvent]);
   return events;
 }
 
