@@ -1,10 +1,15 @@
 import { useEffect, useRef, useState } from "react";
+import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Container, Card } from "../../components";
 
 function HeaderText({ children }) {
   return <h2 className="text-xl">{children}</h2>;
 }
+
+HeaderText.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 function ButtonPage() {
   const buttonClass = classNames("bg-blue-500 text-white px-4 py-2 rounded");
@@ -24,8 +29,10 @@ function ButtonPage() {
   const formActionMessage =
     "The formaction attribute specifies where to send the form-data when a form is submitted.\nThis attribute overrides the form's action attribute.";
   const [debug, setDebug] = useState(false);
-
-  const [showPopover, setShowPopover] = useState(false);
+  const formEncTypeMessage =
+    "The formenctype attribute specifies how form-data should be encoded before sending it to a server.";
+  const popOverMessage =
+    "Popover API is a custom attribute that can be used to create a popover.\nThis attribute is used to target the popover element and the action to toggle the popover.";
   return (
     <Container title={"<button> Tag"} full>
       <Card>
@@ -66,10 +73,7 @@ function ButtonPage() {
           encType="application/x-www-form-urlencoded"
           className="flex flex-col gap-4"
         >
-          <p>
-            The formenctype attribute specifies how form-data should be encoded
-            before sending it to a server.
-          </p>
+          <p className="whitespace-pre-line">{formEncTypeMessage}</p>
           <input
             className="bg-gray-100 border border-gray-300 text-gray-400 text-sm rounded-lg block p-2.5 cursor-not-allowed"
             readOnly
@@ -85,7 +89,6 @@ function ButtonPage() {
             />
             <label htmlFor="checkbox">Debug</label>
           </div>
-
           <button
             className={buttonClass}
             formEncType={
@@ -99,6 +102,7 @@ function ButtonPage() {
       </Card>
       <Card>
         <HeaderText>Popover</HeaderText>
+        <p className="whitespace-pre-line">{popOverMessage}</p>
         <button
           className={buttonClass}
           popovertarget="popover"
