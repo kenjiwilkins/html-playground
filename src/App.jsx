@@ -18,6 +18,7 @@ import BidirectionalOverride from "./views/html-tags/BidirectionalOverride";
 import Blockquote from "./views/html-tags/Blockquote";
 import Body from "./views/html-tags/Body";
 import Break from "./views/html-tags/Break";
+import Button from "./views/html-tags/Button";
 import Progress from "./views/html-tags/Progress";
 import ImageMap from "./views/responsive-design/ImageMap";
 
@@ -46,6 +47,7 @@ function App() {
             <Route path="/html-tags/blockquote" element={<Blockquote />} />
             <Route path="/html-tags/body" element={<Body />} />
             <Route path="/html-tags/break" element={<Break />} />
+            <Route path="/html-tags/button" element={<Button />} />
             <Route path="/html-tags/progress" element={<Progress />} />
           </Route>
           <Route path="/js-scripts" element={<JsScriptsIndex />}>
