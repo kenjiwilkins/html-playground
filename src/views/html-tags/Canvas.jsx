@@ -7,8 +7,18 @@ function CanvasPage() {
     if (!simpleCanvasRef.current) return;
     const canvas = simpleCanvasRef.current;
     const ctx = canvas.getContext("2d");
+    // Draw a more complex shape
+    ctx.beginPath();
+    ctx.moveTo(75, 50);
+    ctx.lineTo(100, 75);
+    ctx.lineTo(100, 25);
     ctx.fillStyle = "red";
-    ctx.fillRect(10, 10, 150, 80);
+    ctx.fill();
+
+    // Add some text
+    ctx.font = "14px Arial";
+    ctx.fillStyle = "black";
+    ctx.fillText("Canvas Example", 10, 90);
   }, [simpleCanvasRef]);
 
   return (
@@ -19,7 +29,8 @@ function CanvasPage() {
           ref={simpleCanvasRef}
           width="200"
           height="100"
-          style={{ border: "1px solid #000000" }}
+          aria-label="Canvas with red rectangle"
+          role="img"
         ></canvas>
         <figcaption>Canvas with red rectangle</figcaption>
       </Card>
