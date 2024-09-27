@@ -58,6 +58,9 @@ function Index() {
             <Link to="/html-tags/canvas">{"<canvas> Tag"}</Link>
           </li>
           <li>
+            <Link to="/html-tags/caption">{"<caption> Tag"}</Link>
+          </li>
+          <li>
             <Link to="/html-tags/progress">{"<progress> Tag"}</Link>
           </li>
         </ul>
