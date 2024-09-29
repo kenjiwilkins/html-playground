@@ -64,6 +64,9 @@ function Index() {
             <Link to="/html-tags/cite">{"<cite> Tag"}</Link>
           </li>
           <li>
+            <Link to="/html-tags/code">{"<code> Tag"}</Link>
+          </li>
+          <li>
             <Link to="/html-tags/progress">{"<progress> Tag"}</Link>
           </li>
         </ul>
