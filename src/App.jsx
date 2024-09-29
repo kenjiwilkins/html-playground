@@ -22,6 +22,7 @@ import Button from "./views/html-tags/Button";
 import Canvas from "./views/html-tags/Canvas";
 import Caption from "./views/html-tags/Caption";
 import Cite from "./views/html-tags/Cite";
+import Code from "./views/html-tags/Code";
 import Progress from "./views/html-tags/Progress";
 import ImageMap from "./views/responsive-design/ImageMap";
 
@@ -54,6 +55,7 @@ function App() {
             <Route path="/html-tags/canvas" element={<Canvas />} />
             <Route path="/html-tags/caption" element={<Caption />} />
             <Route path="/html-tags/cite" element={<Cite />} />
+            <Route path="/html-tags/code" element={<Code />} />
             <Route path="/html-tags/progress" element={<Progress />} />
           </Route>
           <Route path="/js-scripts" element={<JsScriptsIndex />}>
