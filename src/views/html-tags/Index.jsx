@@ -70,6 +70,9 @@ function Index() {
             <Link to="/html-tags/col">{"<col> Tag"}</Link>
           </li>
           <li>
+            <Link to="/html-tags/colgroup">{"<colgroup> Tag"}</Link>
+          </li>
+          <li>
             <Link to="/html-tags/progress">{"<progress> Tag"}</Link>
           </li>
         </ul>

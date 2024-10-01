@@ -24,6 +24,7 @@ import Caption from "./views/html-tags/Caption";
 import Cite from "./views/html-tags/Cite";
 import Code from "./views/html-tags/Code";
 import Col from "./views/html-tags/Col";
+import Colgroup from "./views/html-tags/Colgroup";
 import Progress from "./views/html-tags/Progress";
 import ImageMap from "./views/responsive-design/ImageMap";
 
@@ -58,6 +59,7 @@ function App() {
             <Route path="/html-tags/cite" element={<Cite />} />
             <Route path="/html-tags/code" element={<Code />} />
             <Route path="/html-tags/col" element={<Col />} />
+            <Route path="/html-tags/colgroup" element={<Colgroup />} />
             <Route path="/html-tags/progress" element={<Progress />} />
           </Route>
           <Route path="/js-scripts" element={<JsScriptsIndex />}>
