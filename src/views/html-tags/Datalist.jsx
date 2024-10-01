@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { Container, Card } from "../../components";
 
+const browsers = [
+  "Chrome",
+  "Firefox",
+  "Safari",
+  "Edge",
+  "Opera",
+  "Internet Explorer",
+];
+
 function DatalistPage() {
-  const browsers = [
-    "Chrome",
-    "Firefox",
-    "Safari",
-    "Edge",
-    "Opera",
-    "Internet Explorer",
-  ];
   const [selectedBrowser, setSelectedBrowser] = useState("");
   const handleSelectBrowser = (e) => {
     setSelectedBrowser(e.target.value);
