@@ -76,6 +76,9 @@ function Index() {
             <Link to="/html-tags/data">{"<data> Tag"}</Link>
           </li>
           <li>
+            <Link to="/html-tags/datalist">{"<datalist> Tag"}</Link>
+          </li>
+          <li>
             <Link to="/html-tags/progress">{"<progress> Tag"}</Link>
           </li>
         </ul>
