@@ -27,6 +27,7 @@ import Col from "./views/html-tags/Col";
 import Colgroup from "./views/html-tags/Colgroup";
 import Data from "./views/html-tags/Data";
 import Datalist from "./views/html-tags/Datalist";
+import DescriptionDetails from "./views/html-tags/Description";
 import Progress from "./views/html-tags/Progress";
 import ImageMap from "./views/responsive-design/ImageMap";
 
@@ -64,6 +65,10 @@ function App() {
             <Route path="/html-tags/colgroup" element={<Colgroup />} />
             <Route path="/html-tags/data" element={<Data />} />
             <Route path="/html-tags/datalist" element={<Datalist />} />
+            <Route
+              path="/html-tags/description"
+              element={<DescriptionDetails />}
+            />
             <Route path="/html-tags/progress" element={<Progress />} />
           </Route>
           <Route path="/js-scripts" element={<JsScriptsIndex />}>
