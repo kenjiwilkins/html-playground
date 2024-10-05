@@ -27,8 +27,8 @@ function DescriptionDetailsPage() {
           <strong>Characters in the play Othello by William Shakespeare</strong>
         </p>
         <dl>
-          {characters.map((character, index) => (
-            <div key={`${index}-${character.name}`}>
+          {characters.map((character) => (
+            <div key={character.name}>
               <dt>{character.name}</dt>
               <dd>{character.description}</dd>
             </div>
