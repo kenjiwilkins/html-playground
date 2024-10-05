@@ -3,17 +3,17 @@ import { Container, Card } from "../../components";
 const characters = [
   {
     name: "Othello",
-    desciption:
+    description:
       "A protagonist of the play. He is a Moor, a Christian, and a general of the Venetian army in Italy.",
   },
   {
     name: "Desdemona",
-    desciption:
+    description:
       "A daughter of the Venetian senator Brabantio. She is Othello's wife.",
   },
   {
     name: "Iago",
-    desciption:
+    description:
       "A villain in the play. He is Othello's ensign and the husband of Emilia.",
   },
 ];
@@ -27,10 +27,10 @@ function DescriptionDetailsPage() {
           <strong>Characters in the play Othello by William Shakespeare</strong>
         </p>
         <dl>
-          {characters.map((characters, index) => (
-            <div key={index}>
-              <dt>{characters.name}</dt>
-              <dd>{characters.desciption}</dd>
+          {characters.map((character, index) => (
+            <div key={`${index}-${character.name}`}>
+              <dt>{character.name}</dt>
+              <dd>{character.description}</dd>
             </div>
           ))}
         </dl>
