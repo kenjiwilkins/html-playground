@@ -88,6 +88,9 @@ function Index() {
             <Link to="/html-tags/description">{"<dl> Tag"}</Link>
           </li>
           <li>
+            <Link to="/html-tags/delete">{"<del> Tag"}</Link>
+          </li>
+          <li>
             <Link to="/html-tags/progress">{"<progress> Tag"}</Link>
           </li>
         </ul>
