@@ -15,15 +15,25 @@ function GenerateDate() {
   return faker.date.recent();
 }
 
-const delClass = classNames("line-through bg-red-300 text-gray-700");
-const insClass = classNames("no-underline bg-green-300");
+function delClass(isCustom) {
+  return classNames(
+    "before:content-['start_delete'] after:content-['end_delete']",
+    isCustom && "line-through bg-red-300 text-gray-700"
+  );
+}
+function insClass(isCustom) {
+  return classNames(
+    "before:content-['start_insert'] after:content-['end_insert']",
+    isCustom && "no-underline bg-green-300"
+  );
+}
 
 function Sentence({ isDel, isCustom }) {
   return (
     <span>
       {isDel ? (
         <del
-          className={isCustom && delClass}
+          className={delClass(isCustom)}
           cite={GenerateCite()}
           dateTime={GenerateDate()}
         >
@@ -31,7 +41,7 @@ function Sentence({ isDel, isCustom }) {
         </del>
       ) : (
         <ins
-          className={isCustom && insClass}
+          className={isCustom && insClass(isCustom)}
           cite={GenerateCite()}
           dateTime={GenerateDate()}
         >
