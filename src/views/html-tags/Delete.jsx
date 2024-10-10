@@ -8,11 +8,11 @@ function GenerateSentence() {
 }
 
 function GenerateCite() {
-  return faker.person.fullName();
+  return faker.internet.url();
 }
 
 function GenerateDate() {
-  return faker.date.recent();
+  return faker.date.recent().toISOString();
 }
 
 function delClass(isCustom) {
@@ -41,7 +41,7 @@ function Sentence({ isDel, isCustom }) {
         </del>
       ) : (
         <ins
-          className={isCustom && insClass(isCustom)}
+          className={insClass(isCustom)}
           cite={GenerateCite()}
           dateTime={GenerateDate()}
         >
