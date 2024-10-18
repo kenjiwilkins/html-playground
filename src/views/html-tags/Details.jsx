@@ -26,15 +26,16 @@ function DetailsPage() {
     });
   }
   useEffect(() => {
-    if (detailsRef.current) {
-      detailsRef.current.addEventListener("toggle", handleToggle);
+    const currentRef = detailsRef.current;
+    if (currentRef) {
+      currentRef.addEventListener("toggle", handleToggle);
     }
     return () => {
-      if (detailsRef.current) {
-        detailsRef.current.removeEventListener("toggle", handleToggle);
+      if (currentRef) {
+        currentRef.removeEventListener("toggle", handleToggle);
       }
     };
-  }, [detailsRef.current]);
+  }, []);
 
   const [isOpen, setIsOpen] = useState(false);
   const openAttribute = useRef(null);
@@ -45,21 +46,16 @@ function DetailsPage() {
     setIsOpen(e.newState === "open");
   }
   useEffect(() => {
-    if (openAttribute.current) {
-      openAttribute.current.addEventListener(
-        "toggle",
-        handleOpenAttributeToggle
-      );
+    const currentRef = openAttribute.current;
+    if (currentRef) {
+      currentRef.addEventListener("toggle", handleOpenAttributeToggle);
     }
     return () => {
-      if (openAttribute.current) {
-        openAttribute.current.removeEventListener(
-          "toggle",
-          handleOpenAttributeToggle
-        );
+      if (currentRef) {
+        currentRef.removeEventListener("toggle", handleOpenAttributeToggle);
       }
     };
-  }, [openAttribute.current]);
+  }, []);
   return (
     <Container title={"<details> Tag"} full>
       <Card>
