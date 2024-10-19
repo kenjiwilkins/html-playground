@@ -30,6 +30,7 @@ import Datalist from "./views/html-tags/Datalist";
 import DescriptionDetails from "./views/html-tags/Description";
 import Delete from "./views/html-tags/Delete";
 import Details from "./views/html-tags/Details";
+import Definition from "./views/html-tags/Definition";
 import Progress from "./views/html-tags/Progress";
 import ImageMap from "./views/responsive-design/ImageMap";
 
@@ -73,6 +74,7 @@ function App() {
             />
             <Route path="/html-tags/delete" element={<Delete />} />
             <Route path="/html-tags/details" element={<Details />} />
+            <Route path="/html-tags/definition" element={<Definition />} />
             <Route path="/html-tags/progress" element={<Progress />} />
           </Route>
           <Route path="/js-scripts" element={<JsScriptsIndex />}>
