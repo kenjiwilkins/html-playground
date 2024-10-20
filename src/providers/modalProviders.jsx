@@ -4,13 +4,24 @@ import PropTypes from "prop-types";
 import { AlertModal } from "../components/modals";
 
 export const ModalContext = createContext(null);
-// const ModalList = {
-//   alert: AlertModal,
-// };
 
 function Modal({ ...props }) {
-  return <AlertModal {...props} />;
+  const ModalList = {
+    alert: AlertModal,
+  };
+
+  const Component = ModalList[props.type];
+  if (!Component) {
+    console.error(`Modal type ${props.type} is not supported`);
+    return null;
+  }
+
+  return <Component {...props} />;
 }
+
+Modal.propTypes = {
+  type: PropTypes.string.isRequired,
+};
 
 export function ModalProvider({ children }) {
   const [currentModal, setCurrentModal] = useState(null);

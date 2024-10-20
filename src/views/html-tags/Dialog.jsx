@@ -43,6 +43,7 @@ function DialogPage() {
   const setCurrentModal = useContext(ModalContext);
   function handleModalOpen() {
     setCurrentModal({
+      type: "alert",
       title: "Alert",
       message: "This is an alert modal",
       confirmButtonText: "Understood",
