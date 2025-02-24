@@ -1,6 +1,7 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Index from "./views/Index";
 import HtmlTagsIndex from "./views/html-tags/Index";
+import CssStylesIndex from "./views/css-styles/Index";
 import JsScriptsIndex from "./views/js-scripts/Index";
 import ResponsiveIndex from "./views/responsive-design/Index";
 import DynamicFavicon from "./views/DynamicFavicon";
@@ -32,6 +33,7 @@ import Delete from "./views/html-tags/Delete";
 import Details from "./views/html-tags/Details";
 import Definition from "./views/html-tags/Definition";
 import Progress from "./views/html-tags/Progress";
+import Active from './views/css-styles/Active';
 import ImageMap from "./views/responsive-design/ImageMap";
 
 function NotFound() {
@@ -76,6 +78,9 @@ function App() {
             <Route path="/html-tags/details" element={<Details />} />
             <Route path="/html-tags/definition" element={<Definition />} />
             <Route path="/html-tags/progress" element={<Progress />} />
+          </Route>
+          <Route path="/css-styles" element={<CssStylesIndex />}>
+            <Route path="/css-styles/active" element={<Active />} />
           </Route>
           <Route path="/js-scripts" element={<JsScriptsIndex />}>
             <Route
