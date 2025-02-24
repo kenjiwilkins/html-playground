@@ -1,0 +1,9 @@
+#anylink :any-link {
+  color: red;
+  text-decoration: underline;
+}
+
+#anylink :-webkit-any-link {
+  color: red;
+  text-decoration: underline;
+}

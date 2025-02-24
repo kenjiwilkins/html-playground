@@ -34,6 +34,7 @@ import Details from "./views/html-tags/Details";
 import Definition from "./views/html-tags/Definition";
 import Progress from "./views/html-tags/Progress";
 import Active from './views/css-styles/Active';
+import AnyLink from './views/css-styles/AnyLink';
 import ImageMap from "./views/responsive-design/ImageMap";
 
 function NotFound() {
@@ -81,6 +82,7 @@ function App() {
           </Route>
           <Route path="/css-styles" element={<CssStylesIndex />}>
             <Route path="/css-styles/active" element={<Active />} />
+            <Route path="/css-styles/any-link" element={<AnyLink />} />
           </Route>
           <Route path="/js-scripts" element={<JsScriptsIndex />}>
             <Route
