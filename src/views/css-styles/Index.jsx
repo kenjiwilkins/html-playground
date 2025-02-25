@@ -15,6 +15,9 @@ function Index() {
           <li>
             <Link to="/css-styles/any-link">:any-link</Link>
           </li>
+          <li>
+            <Link to="/css-styles/autofill">:autofill</Link>
+          </li>
         </ul>
       </aside>
       <Outlet />
