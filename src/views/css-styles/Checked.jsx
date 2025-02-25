@@ -1,0 +1,46 @@
+import { Container, Card } from "../../components";
+
+function Autofill() {
+  return (
+    <div>
+      <Container title=":checked selector">
+        <Card>
+          <p className="flex flex-col gap-2">
+            <span>
+            {":autofill is a pseudo-class that represents an element that is being autofilled by the browser."}
+            {"However, the most of modern browsers uses !important for autofill styles so you may find some style properties are not working."}
+            </span>
+          </p>
+        </Card>
+        <Card>
+          <h2>Radio button</h2>
+          <div className="flex flex-col gap-2">
+            <div>
+              <input type="radio" name="my-input" id="yes" className="radio-yes peer"/>
+              <label for="yes" className="peer-[.radio-yes]:peer-checked:text-red-500">Yes</label>
+            </div>
+            <div>
+              <input type="radio" name="my-input" id="no" className="radio-no peer"/>
+              <label for="no" className="peer-[.radio-no]:peer-checked:text-red-500">No</label>
+            </div>
+          </div>
+        </Card>
+        <Card>
+          <h2>Checkbox</h2>
+          <div className="flex flex-col gap-2">
+            <div>
+              <input type="checkbox" id="check" className="checkbox-1 peer"/>
+              <label for="check" className="peer-[.checkbox-1]:peer-checked:text-red-500">Check 1</label>
+            </div>
+            <div>
+              <input type="checkbox" id="check2" className="checkbox-2 peer"/>
+              <label for="check2" className="peer-[.checkbox-2]:peer-checked:text-red-500">Check 2</label>
+            </div>
+          </div>
+        </Card>
+      </Container>
+    </div>
+  )
+}
+
+export default Autofill;

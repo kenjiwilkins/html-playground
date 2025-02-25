@@ -18,6 +18,9 @@ function Index() {
           <li>
             <Link to="/css-styles/autofill">:autofill</Link>
           </li>
+          <li>
+            <Link to="/css-styles/checked">:checked</Link>
+          </li>
         </ul>
       </aside>
       <Outlet />
