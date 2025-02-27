@@ -7,8 +7,8 @@ function Autofill() {
         <Card>
           <p className="flex flex-col gap-2">
             <span>
-            {":autofill is a pseudo-class that represents an element that is being autofilled by the browser."}
-            {"However, the most of modern browsers uses !important for autofill styles so you may find some style properties are not working."}
+            {":checked is a pseudo-class that represents radio and checkbox elements that are in the selected state."}
+            {"It can be used to style elements based on their checked state."}
             </span>
           </p>
         </Card>
