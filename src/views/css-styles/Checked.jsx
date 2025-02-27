@@ -17,11 +17,11 @@ function Autofill() {
           <div className="flex flex-col gap-2">
             <div>
               <input type="radio" name="my-input" id="yes" className="radio-yes peer"/>
-              <label for="yes" className="peer-[.radio-yes]:peer-checked:text-red-500">Yes</label>
+              <label htmlFor="yes" className="peer-[.radio-yes]:peer-checked:text-red-500">Yes</label>
             </div>
             <div>
               <input type="radio" name="my-input" id="no" className="radio-no peer"/>
-              <label for="no" className="peer-[.radio-no]:peer-checked:text-red-500">No</label>
+              <label htmlFor="no" className="peer-[.radio-no]:peer-checked:text-red-500">No</label>
             </div>
           </div>
         </Card>
@@ -30,11 +30,11 @@ function Autofill() {
           <div className="flex flex-col gap-2">
             <div>
               <input type="checkbox" id="check" className="checkbox-1 peer"/>
-              <label for="check" className="peer-[.checkbox-1]:peer-checked:text-red-500">Check 1</label>
+              <label htmlFor="check" className="peer-[.checkbox-1]:peer-checked:text-red-500">Check 1</label>
             </div>
             <div>
               <input type="checkbox" id="check2" className="checkbox-2 peer"/>
-              <label for="check2" className="peer-[.checkbox-2]:peer-checked:text-red-500">Check 2</label>
+              <label htmlFor="check2" className="peer-[.checkbox-2]:peer-checked:text-red-500">Check 2</label>
             </div>
           </div>
         </Card>
