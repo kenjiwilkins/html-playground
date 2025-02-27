@@ -1,6 +1,6 @@
 import { Container, Card } from "../../components";
 
-function Autofill() {
+function Checked() {
   return (
     <div>
       <Container title=":checked selector">
