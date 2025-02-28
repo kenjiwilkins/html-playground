@@ -22,22 +22,25 @@ function DialogPage() {
       dialog.addEventListener("click", isClickOutside);
     } else {
       dialog.close();
+      dialog.removeEventListener("click", isClickOutside);
     }
   }
   const formDialogRef = useRef(null);
   function handleFormDialogOpen(open) {
     const dialog = formDialogRef.current;
+    const handleSubmit = () => {
+      const select = dialog.querySelector("select");
+      alert(`You selected: ${select.value}`);
+      dialog.close(select.value);
+    }
     if (open) {
       dialog.showModal();
-      const select = dialog.querySelector("select");
       const confirmButton = dialog.querySelector("button[type=submit]");
-      confirmButton.addEventListener("click", () => {
-        alert(`You selected: ${select.value}`);
-        dialog.close(select.value);
-        console.log(dialog.returnValue);
-      });
+      confirmButton.addEventListener("click", handleSubmit);
     } else {
       dialog.close();
+      const confirmButton = dialog.querySelector("button[type=submit]");
+      confirmButton.removeEventListener("click", handleSubmit);
     }
   }
   const setCurrentModal = useContext(ModalContext);
