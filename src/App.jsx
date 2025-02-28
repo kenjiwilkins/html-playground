@@ -37,6 +37,7 @@ import Active from './views/css-styles/Active';
 import AnyLink from './views/css-styles/AnyLink';
 import Autofill from "./views/css-styles/Autofill";
 import Checked from "./views/css-styles/Checked";
+import Default from "./views/css-styles/Default";
 import ImageMap from "./views/responsive-design/ImageMap";
 
 function NotFound() {
@@ -87,6 +88,7 @@ function App() {
             <Route path="/css-styles/any-link" element={<AnyLink />} />
             <Route path="/css-styles/autofill" element={<Autofill />} />
             <Route path="/css-styles/checked" element={<Checked />} />
+            <Route path="/css-styles/default" element={<Default />} />
           </Route>
           <Route path="/js-scripts" element={<JsScriptsIndex />}>
             <Route

@@ -21,6 +21,9 @@ function Index() {
           <li>
             <Link to="/css-styles/checked">:checked</Link>
           </li>
+          <li>
+            <Link to="/css-styles/default">:default</Link>
+          </li>
         </ul>
       </aside>
       <Outlet />
