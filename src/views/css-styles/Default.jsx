@@ -1,5 +1,4 @@
 import { Container, Card } from "../../components";
-import "./default.css"
 
 function Default() {
   return (
@@ -18,14 +17,14 @@ function Default() {
           <h2>:default check box</h2>
           <form onSubmit={(e) => e.preventDefault()}>
               <label>
-                <input type="checkbox" name="my-check" class="peer" checked/>
-                <span class="h-4 w-4 bg-gray-200 peer-default:bg-blue-200 peer-checked:text-red-500">
+                <input type="checkbox" name="my-check" className="peer" checked/>
+                <span className="h-4 w-4 bg-gray-200 peer-default:bg-blue-200 peer-checked:text-red-500">
                   choice 1
                 </span>
               </label>
               <label>
-                <input type="checkbox" name="my-check" class="peer"/>
-                <span class="h-4 w-4 bg-gray-200  peer-checked:text-red-500">
+                <input type="checkbox" name="my-check" className="peer"/>
+                <span className="h-4 w-4 bg-gray-200  peer-checked:text-red-500">
                   choice 2
                 </span>
               </label>
@@ -35,14 +34,14 @@ function Default() {
           <h2>:default radio button</h2>
           <form onSubmit={(e) => e.preventDefault()}>
               <label>
-                <input type="radio" name="my-input" class="peer" checked/>
-                <span class="h-4 w-4 bg-gray-200 peer-default:bg-blue-200 peer-checked:text-red-500">
+                <input type="radio" name="my-input" className="peer" checked/>
+                <span className="h-4 w-4 bg-gray-200 peer-default:bg-blue-200 peer-checked:text-red-500">
                   Yes
                 </span>
               </label>
               <label>
-                <input type="radio" name="my-input" class="peer"/>
-                <span class="h-4 w-4 bg-gray-200 peer-default:text-blue-500 peer-checked:text-red-500">
+                <input type="radio" name="my-input" className="peer"/>
+                <span className="h-4 w-4 bg-gray-200 peer-default:text-blue-500 peer-checked:text-red-500">
                   No
                 </span>
               </label>
@@ -51,7 +50,7 @@ function Default() {
         <Card>
           <h2>:default button</h2>
           <form onSubmit={(e) => e.preventDefault()}>
-          <button type="submit" value="button" class="p-2 border-none rounded bg-gray-200 default:bg-blue-200 default:text-red-500">
+          <button type="submit" value="button" className="p-2 border-none rounded bg-gray-200 default:bg-blue-200 default:text-red-500">
             submit
           </button>
           </form>
