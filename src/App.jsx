@@ -32,6 +32,7 @@ import DescriptionDetails from "./views/html-tags/Description";
 import Delete from "./views/html-tags/Delete";
 import Details from "./views/html-tags/Details";
 import Definition from "./views/html-tags/Definition";
+import Dialog from "./views/html-tags/Dialog";
 import Progress from "./views/html-tags/Progress";
 import Active from './views/css-styles/Active';
 import AnyLink from './views/css-styles/AnyLink';
@@ -81,6 +82,7 @@ function App() {
             <Route path="/html-tags/delete" element={<Delete />} />
             <Route path="/html-tags/details" element={<Details />} />
             <Route path="/html-tags/definition" element={<Definition />} />
+            <Route path="/html-tags/dialog" element={<Dialog />} />
             <Route path="/html-tags/progress" element={<Progress />} />
           </Route>
           <Route path="/css-styles" element={<CssStylesIndex />}>
