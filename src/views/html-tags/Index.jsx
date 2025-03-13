@@ -6,8 +6,8 @@ function Index() {
     document.title = "HTML Tags";
   }, []);
   return (
-    <>
-      <aside className="flex">
+    <div className="flex">
+      <aside className="flex min-w-fit">
         <ul className="p-4 pr-6 w-48">
           <li>
             <Link to="/html-tags/anchor">{"<a> Tag"}</Link>
@@ -103,9 +103,9 @@ function Index() {
             <Link to="/html-tags/progress">{"<progress> Tag"}</Link>
           </li>
         </ul>
-        <Outlet />
       </aside>
-    </>
+      <Outlet />
+    </div>
   );
 }
 
