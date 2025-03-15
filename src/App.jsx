@@ -34,6 +34,7 @@ import Details from "./views/html-tags/Details";
 import Definition from "./views/html-tags/Definition";
 import Dialog from "./views/html-tags/Dialog";
 import Emphasis from "./views/html-tags/Emphasis";
+import Embed from "./views/html-tags/Embed";
 import Progress from "./views/html-tags/Progress";
 import Active from './views/css-styles/Active';
 import AnyLink from './views/css-styles/AnyLink';
@@ -85,6 +86,7 @@ function App() {
             <Route path="/html-tags/definition" element={<Definition />} />
             <Route path="/html-tags/dialog" element={<Dialog />} />
             <Route path="/html-tags/emphasis" element={<Emphasis />} />
+            <Route path="/html-tags/embed" element={<Embed />} />
             <Route path="/html-tags/progress" element={<Progress />} />
           </Route>
           <Route path="/css-styles" element={<CssStylesIndex />}>
