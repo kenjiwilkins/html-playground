@@ -106,6 +106,9 @@ function Index() {
             <Link to="/html-tags/embed">{"<embed> Tag"}</Link>
           </li>
           <li>
+            <Link to="/html-tags/iframe">{"<iframe> Tag"}</Link>
+          </li>
+          <li>
             <Link to="/html-tags/progress">{"<progress> Tag"}</Link>
           </li>
         </ul>
