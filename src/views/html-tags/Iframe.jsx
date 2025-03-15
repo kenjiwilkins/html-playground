@@ -17,7 +17,7 @@ export default function IframePage() {
     setHeight(windowHeight);
   }
   function receivePostMessage(event) {
-    if(!event.isTrusted) return;
+    if(!event.isTrusted || event.origin !== window.location.origin) return;
     switch (event.data.buttonNumber) {
       case 1:
         console.log("Button 1 clicked");
@@ -71,15 +71,15 @@ export default function IframePage() {
           <div className="flex justify-center">
             <p>
               Button 1 Clicks:
-              <span className="mx-2"> {button1ClickCount}</span>
+              <strong className="mx-2"> {button1ClickCount}</strong>
             </p>
             <p>
               Button 2 Clicks:
-              <span className="mx-2">{button2ClickCount}</span>
+              <strong className="mx-2">{button2ClickCount}</strong>
             </p>
             <p>
               Button 3 Clicks:
-              <span className="mx-2">{button3ClickCount}</span>
+              <strong className="mx-2">{button3ClickCount}</strong>
             </p>
           </div>
           <div className="flex justify-center gap-2">
@@ -90,6 +90,7 @@ export default function IframePage() {
           <iframe
             allow="fullscreen"
             title="iframe post message example"
+            sandbox="allow-scripts allow-same-origin"
             className="grow"
             src={childHtml}
             width={width}
