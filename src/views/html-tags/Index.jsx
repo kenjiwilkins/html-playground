@@ -109,6 +109,12 @@ function Index() {
             <Link to="/html-tags/fieldset">{"<fieldset> Tag"}</Link>
           </li>
           <li>
+            <Link to="/html-tags/figure">{"<figcaption> Tag"}</Link>
+          </li>
+          <li>
+            <Link to="/html-tags/figure">{"<figure> Tag"}</Link>
+          </li>
+          <li>
             <Link to="/html-tags/iframe">{"<iframe> Tag"}</Link>
           </li>
           <li>
