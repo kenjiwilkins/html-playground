@@ -36,6 +36,7 @@ import Dialog from "./views/html-tags/Dialog";
 import Emphasis from "./views/html-tags/Emphasis";
 import Embed from "./views/html-tags/Embed";
 import Fieldset from "./views/html-tags/Fieldset";
+import Figure from "./views/html-tags/Figure";
 import Iframe from "./views/html-tags/Iframe";
 import Progress from "./views/html-tags/Progress";
 import Active from './views/css-styles/Active';
@@ -90,6 +91,7 @@ function App() {
             <Route path="/html-tags/emphasis" element={<Emphasis />} />
             <Route path="/html-tags/embed" element={<Embed />} />
             <Route path="/html-tags/fieldset" element={<Fieldset />} />
+            <Route path="/html-tags/figure" element={<Figure />} />
             <Route path="/html-tags/iframe" element={<Iframe />} />
             <Route path="/html-tags/progress" element={<Progress />} />
           </Route>
