@@ -27,6 +27,9 @@ function Index() {
       <main>
         <Outlet />
       </main>
+      <footer className="p-4 mt-4 text-center">
+        <address>&copy; 2025 Michael Kenji Wilkins</address>
+      </footer>
     </>
   );
 }
