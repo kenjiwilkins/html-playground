@@ -123,7 +123,7 @@ function greet() {
         <h2 className="text-xl">Figure - blockquote</h2>
         <figure className="rounded-lg shadow-lg p-4 w-fit">
           <blockquote className="text-gray-500 italic">
-            "If you only read the books that everyone else is reading, you can only think what everyone else is thinking."
+            &ldquo;If you only read the books that everyone else is reading, you can only think what everyone else is thinking.&rdquo;
           </blockquote>
           <figcaption className="text-center font-sans">Haruki Murakami</figcaption>
         </figure>
