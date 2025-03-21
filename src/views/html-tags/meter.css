@@ -1,0 +1,26 @@
+.meter {
+  -webkit-appearance: none;
+}
+
+/* Meter background */
+.meter::-webkit-meter-bar {
+  background: lightgray;
+  width: 40vw;
+  border-radius: 5px;
+  height: 15px;
+}
+
+/* Optimum value range (green) */
+.meter::-webkit-meter-optimum-value {
+  background: rgb(1, 212, 1);
+}
+
+/* Suboptimum range (yellow) */
+.meter::-webkit-meter-suboptimum-value {
+  background: rgb(175, 114, 1);
+}
+
+/* Even less good range (red) */
+.meter::-webkit-meter-even-less-good-value {
+  background: rgb(248, 45, 45);
+}

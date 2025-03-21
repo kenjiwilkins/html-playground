@@ -38,6 +38,7 @@ import Embed from "./views/html-tags/Embed";
 import Fieldset from "./views/html-tags/Fieldset";
 import Figure from "./views/html-tags/Figure";
 import Iframe from "./views/html-tags/Iframe";
+import Meter from "./views/html-tags/Meter";
 import Progress from "./views/html-tags/Progress";
 import Active from './views/css-styles/Active';
 import AnyLink from './views/css-styles/AnyLink';
@@ -93,6 +94,7 @@ function App() {
             <Route path="/html-tags/fieldset" element={<Fieldset />} />
             <Route path="/html-tags/figure" element={<Figure />} />
             <Route path="/html-tags/iframe" element={<Iframe />} />
+            <Route path="/html-tags/meter" element={<Meter />} />
             <Route path="/html-tags/progress" element={<Progress />} />
           </Route>
           <Route path="/css-styles" element={<CssStylesIndex />}>
