@@ -2,7 +2,7 @@
   -webkit-appearance: none;
 }
 
-/* メーターの背景 */
+/* Meter background */
 .meter::-webkit-meter-bar {
   background: lightgray;
   width: 40vw;
@@ -10,17 +10,17 @@
   height: 15px;
 }
 
-/* 最適な値の範囲（緑） */
+/* Optimum value range (green) */
 .meter::-webkit-meter-optimum-value {
-  background: green;
+  background: rgb(1, 212, 1);
 }
 
-/* 許容範囲（黄色） */
+/* Suboptimum range (yellow) */
 .meter::-webkit-meter-suboptimum-value {
-  background: orange;
+  background: rgb(175, 114, 1);
 }
 
-/* 問題のある範囲（赤） */
+/* Even less good range (red) */
 .meter::-webkit-meter-even-less-good-value {
-  background: red;
+  background: rgb(248, 45, 45);
 }
