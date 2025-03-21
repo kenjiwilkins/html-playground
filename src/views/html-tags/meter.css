@@ -1,0 +1,26 @@
+.meter {
+  -webkit-appearance: none;
+}
+
+/* メーターの背景 */
+.meter::-webkit-meter-bar {
+  background: lightgray;
+  width: 40vw;
+  border-radius: 5px;
+  height: 15px;
+}
+
+/* 最適な値の範囲（緑） */
+.meter::-webkit-meter-optimum-value {
+  background: green;
+}
+
+/* 許容範囲（黄色） */
+.meter::-webkit-meter-suboptimum-value {
+  background: orange;
+}
+
+/* 問題のある範囲（赤） */
+.meter::-webkit-meter-even-less-good-value {
+  background: red;
+}
