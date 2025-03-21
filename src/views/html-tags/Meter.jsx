@@ -1,6 +1,5 @@
 import { useMemo, useState } from "react";
 import { Button, Container, Card } from "../../components";
-import { faker } from "@faker-js/faker";
 import "./meter.css";
 
 export default function MeterPage() {
