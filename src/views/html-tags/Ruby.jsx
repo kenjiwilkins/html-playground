@@ -1,6 +1,6 @@
 import { Container, Card } from "../../components";
 
-function Ruby(baseText, rubyText, rpOpener = "(", rpCloser = ")") {
+function Ruby({ baseText, rubyText, rpOpener = "(", rpCloser = ")" }) {
   return (
     <ruby>
       {baseText}
@@ -32,38 +32,38 @@ export default function RubyPage() {
       <Card>
         <h2 className="text-xl">Ruby - default</h2>
         <p>
-          {Ruby("漢字", "かんじ")}
+          <Ruby baseText="漢字" rubyText="かんじ" />
         </p>
         <p>
-          {Ruby("少年易老学難成", "しょうねんおいやすくがくなりがたし")}
+          <Ruby baseText="少年易老学難成" rubyText="しょうねんおいやすくがくなりがたし" />
         </p>
       </Card>
       <Card>
         <h2 className="text-xl">Ruby - with custom parentheses</h2>
         <p>
-          {Ruby("漢字", "かんじ", "[", "]")}
+          <Ruby baseText="漢字" rubyText="かんじ" rpOpener="[" rpCloser="]" />
         </p>
       </Card>
       <Card>
         <h2 className="text-xl">Ruby - with separate rubys</h2>
         <p>
-          {Ruby("不", "ハード")}
-          {Ruby("運", "ラック")}
+          <Ruby baseText="不" rubyText="ハード" />
+          <Ruby baseText="運" rubyText="ラック" />
           と
-          {Ruby("踊", "ダンス")}
+          <Ruby baseText="踊" rubyText="ダンス" />
           っちまった。
         </p>
       </Card>
       <Card>
         <h2 className="text-xl">Ruby - within a long sentence</h2>
         <p>
-          {Ruby("吾輩", "わがはい")}
+          <Ruby baseText="吾輩" rubyText="わがはい" />
           は
-          {Ruby("猫", "ねこ")}
+          <Ruby baseText="猫" rubyText="ねこ" />
           である。
-          {Ruby("名前", "なまえ")}
+          <Ruby baseText="名前" rubyText="なまえ" />
           はまだ
-          {Ruby("無", "な")}
+          <Ruby baseText="無" rubyText="な" />
           い。
         </p>
       </Card>
@@ -71,9 +71,9 @@ export default function RubyPage() {
         <h2 className="text-xl">Ruby - with full size kana</h2>
         <caption>Full-size kana is available in limited browsers</caption>
         <p style={{textTransform: "full-size-kana"}}>
-          {Ruby("老若男女", "ロウニャクナンニョ")}
+          <Ruby baseText="老若男女" rubyText="ロウニャクナンニョ" />
         </p>
       </Card>
-  </Container>
+    </Container>
   )
 }
