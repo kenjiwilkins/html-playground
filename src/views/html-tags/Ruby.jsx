@@ -1,4 +1,5 @@
 import { Container, Card } from "../../components";
+import PropTypes from "prop-types";
 
 function Ruby({ baseText, rubyText, rpOpener = "(", rpCloser = ")" }) {
   return (
@@ -9,6 +10,13 @@ function Ruby({ baseText, rubyText, rpOpener = "(", rpCloser = ")" }) {
       <rp>{rpCloser}</rp>
     </ruby>
   )
+}
+
+Ruby.propTypes = {
+  baseText: PropTypes.string.isRequired,
+  rubyText: PropTypes.string.isRequired,
+  rpOpener: PropTypes.string,
+  rpCloser: PropTypes.string,
 }
 
 export default function RubyPage() {
