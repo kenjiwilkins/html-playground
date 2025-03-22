@@ -40,6 +40,7 @@ import Figure from "./views/html-tags/Figure";
 import Iframe from "./views/html-tags/Iframe";
 import Meter from "./views/html-tags/Meter";
 import Progress from "./views/html-tags/Progress";
+import Ruby from "./views/html-tags/Ruby";
 import Active from './views/css-styles/Active';
 import AnyLink from './views/css-styles/AnyLink';
 import Autofill from "./views/css-styles/Autofill";
@@ -96,6 +97,7 @@ function App() {
             <Route path="/html-tags/iframe" element={<Iframe />} />
             <Route path="/html-tags/meter" element={<Meter />} />
             <Route path="/html-tags/progress" element={<Progress />} />
+            <Route path="/html-tags/ruby" element={<Ruby/>} />
           </Route>
           <Route path="/css-styles" element={<CssStylesIndex />}>
             <Route path="/css-styles/active" element={<Active />} />
