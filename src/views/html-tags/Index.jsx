@@ -123,6 +123,9 @@ function Index() {
           <li>
             <Link to="/html-tags/progress">{"<progress> Tag"}</Link>
           </li>
+          <li>
+            <Link to="/html-tags/ruby">{"<ruby> Tag"}</Link>
+          </li>
         </ul>
       </aside>
       <Outlet />
