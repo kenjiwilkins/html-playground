@@ -1,19 +1,23 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Container, Card } from "../../components";
 import { fakerAR, fakerEN } from "@faker-js/faker";
 import "./direction.css";
 
 export default function DirectionPage() {
-  const englishSentence = fakerEN.lorem.paragraphs(1);
-  const arabicSentence = fakerAR.lorem.paragraphs(1);
+  
   const [language, setLanguage] = useState("en");
+  const englishSentence = useMemo(() => fakerEN.lorem.paragraphs(1), []);
+  const arabicSentence = useMemo(() => fakerAR.lorem.paragraphs(1), []);
 
   return (
     <Container title="Direction">
       <Card>
         <p className="flex flex-col gap-2">
           <span>
-          {"dir() is a CSS pseudo-class function that is used to style elements based on the direction of the text. The function takes a single argument, which is a string that represents the direction of the text. The function can be used to style elements based on the direction of the text, such as changing the color or background color of the text based on the direction."}
+          {`dir() is a CSS pseudo-class function that is used to style elements based on the direction of the text. 
+          The function takes a single argument, which is a string that represents the direction of the text. 
+          The function can be used to style elements based on the direction of the text, such as changing the 
+          color or background color of the text based on the direction.`}
           </span>
         </p>
       </Card>
