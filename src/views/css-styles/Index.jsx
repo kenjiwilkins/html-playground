@@ -25,7 +25,10 @@ function Index() {
             <Link to="/css-styles/default">:default</Link>
           </li>
           <li>
-            <Link to="/css-styles/dir">:{"dir()"}</Link>
+            <Link to="/css-styles/dir">:{":dir()"}</Link>
+          </li>
+          <li>
+            <Link to="/css-styles/disabled">:disabled</Link>
           </li>
         </ul>
       </aside>
