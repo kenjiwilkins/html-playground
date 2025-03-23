@@ -18,7 +18,6 @@ export default function DisabledPage() {
         <p className="flex flex-col gap-2">
           <span>
           {`:disabled is a CSS pseudo-class that is used to style elements that are disabled
-          The :disabled pseudo-class is used to style elements that are disabled.
           The pseudo-class can be used
           to change the appearance of
           disabled elements, such as changing the color or background color of the element.`}
