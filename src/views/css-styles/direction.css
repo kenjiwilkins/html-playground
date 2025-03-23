@@ -1,0 +1,7 @@
+.dir:is(p):dir(ltr) {
+  background-color: yellow;
+}
+
+.dir:is(p):dir(rtl) {
+  background-color: powderblue;
+}
