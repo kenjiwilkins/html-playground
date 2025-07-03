@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { Container, Card } from "../../components";
 import { fakerEN } from "@faker-js/faker";
+import PropTypes from "prop-types";
 
 function NavItem({ href, children }) {
   return (
@@ -12,6 +13,11 @@ function NavItem({ href, children }) {
     </a>
   );
 }
+
+NavItem.propTypes = {
+  href: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
 
 function TargetSection({ id, title, bgColor, borderColor, text }) {
   return (
@@ -28,6 +34,14 @@ function TargetSection({ id, title, bgColor, borderColor, text }) {
     </div>
   );
 }
+
+TargetSection.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  bgColor: PropTypes.string.isRequired,
+  borderColor: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+};
 
 function Target() {
   const section1Text = useMemo(() => fakerEN.lorem.paragraphs(3), []);
