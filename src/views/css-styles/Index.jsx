@@ -27,6 +27,9 @@ function Index() {
           <li>
             <Link to="/css-styles/dir">:{"dir()"}</Link>
           </li>
+          <li>
+            <Link to="/css-styles/target">:target</Link>
+          </li>
         </ul>
       </aside>
       <Outlet />
