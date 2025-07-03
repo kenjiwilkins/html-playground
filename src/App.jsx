@@ -47,6 +47,7 @@ import Autofill from "./views/css-styles/Autofill";
 import Checked from "./views/css-styles/Checked";
 import Default from "./views/css-styles/Default";
 import Direction from "./views/css-styles/Direction";
+import Target from "./views/css-styles/Target";
 import ImageMap from "./views/responsive-design/ImageMap";
 
 function NotFound() {
@@ -107,6 +108,7 @@ function App() {
             <Route path="/css-styles/checked" element={<Checked />} />
             <Route path="/css-styles/default" element={<Default />} />
             <Route path="/css-styles/dir" element={<Direction />}/>
+            <Route path="/css-styles/target" element={<Target />}/>
           </Route>
           <Route path="/js-scripts" element={<JsScriptsIndex />}>
             <Route
