@@ -1,10 +1,11 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Index from "./views/Index";
 import HtmlTagsIndex from "./views/html-tags/Index";
 import CssStylesIndex from "./views/css-styles/Index";
 import JsScriptsIndex from "./views/js-scripts/Index";
 import ResponsiveIndex from "./views/responsive-design/Index";
 import DynamicFavicon from "./views/DynamicFavicon";
+import ViewTransition from "./views/js-scripts/ViewTransition";
 import Anchor from "./views/html-tags/Anchor";
 import Abbr from "./views/html-tags/Abbr";
 import Address from "./views/html-tags/Address";
@@ -55,8 +56,8 @@ function NotFound() {
 }
 
 function App() {
+
   return (
-    <BrowserRouter>
       <Routes>
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Index />}>
@@ -115,13 +116,16 @@ function App() {
               path="/js-scripts/dynamic-favicon"
               element={<DynamicFavicon />}
             />
+            <Route
+              path="/js-scripts/view-transition"
+              element={<ViewTransition />}
+            />
           </Route>
           <Route path="/responsive-design" element={<ResponsiveIndex />}>
             <Route path="/responsive-design/image-map" element={<ImageMap />} />
           </Route>
         </Route>
       </Routes>
-    </BrowserRouter>
   );
 }
 

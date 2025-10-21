@@ -1,25 +1,40 @@
-import { Link, Outlet } from "react-router-dom";
+import { useEffect } from "react";
+import { Outlet } from "react-router-dom";
+import {TransitionButton} from "../components";
+import { getCookie } from "../utils/cookies";
+import { applyTransition } from "../utils/transitions";
 
 function Index() {
+  useEffect(() => {
+    // Load transition type from cookie and apply
+    const transitionType = getCookie("view-transition-type");
+    if (transitionType) {
+      applyTransition(transitionType);
+    } else {
+      // Set default transition
+      applyTransition("fade");
+    }
+  }, []);
+
   return (
     <>
       <header className="border-b border-gray-400">
         <nav className="p-4">
           <ul className="flex justify-between">
             <li>
-              <Link to="/">Home</Link>
+              <TransitionButton to="/" ariaLabel="Navigate to home page">Home</TransitionButton>
             </li>
             <li>
-              <Link to="/html-tags">HTML Tags</Link>
+              <TransitionButton to="/html-tags" ariaLabel="Navigate to HTML tags examples">HTML Tags</TransitionButton>
             </li>
             <li>
-              <Link to="/css-styles">CSS Styles</Link>
+              <TransitionButton to="/css-styles" ariaLabel="Navigate to CSS styles examples">CSS Styles</TransitionButton>
             </li>
             <li>
-              <Link to="/js-scripts">JS Scripts</Link>
+              <TransitionButton to="/js-scripts" ariaLabel="Navigate to JavaScript scripts examples">JS Scripts</TransitionButton>
             </li>
             <li>
-              <Link to="/responsive-design">Responsive Design</Link>
+              <TransitionButton to="/responsive-design" ariaLabel="Navigate to responsive design examples">Responsive Design</TransitionButton>
             </li>
           </ul>
         </nav>
