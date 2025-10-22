@@ -10,6 +10,118 @@ body {
   background-color: #f7fafc;
 }
 
+/* CSS Variables for transition animations */
+:root {
+  --transition-out: fade-out;
+  --transition-in: fade-in;
+  --transition-duration: 0.5s;
+}
+
+/* View Transition API styles */
+::view-transition-old(root) {
+  animation: var(--transition-out) var(--transition-duration) ease-in-out;
+}
+
+::view-transition-new(root) {
+  animation: var(--transition-in) var(--transition-duration) ease-in-out;
+}
+
+/* Fade transition */
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide transition */
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Zoom transition */
+@keyframes zoom-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Rotate transition */
+@keyframes rotate-out {
+  from {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+  }
+}
+
+@keyframes rotate-in {
+  from {
+    opacity: 0;
+    transform: rotate(10deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+/* None transition */
+@keyframes none-transition {
+  from, to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 button {
   border: none;
 }

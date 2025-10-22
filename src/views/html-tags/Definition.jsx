@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { Container, Card } from "../../components";
+import { Container, Card, TransitionButton } from "../../components";
 
 function DefinitionPage() {
   return (
@@ -61,7 +60,7 @@ function DefinitionPage() {
         <p>
           When dfn does not have a title attribute, and abbr is the only child,
           the dfn element represents the term being defined. see{" "}
-          <Link to="/html-tags/abbr">{"<abbr> Tag"}</Link>
+          <TransitionButton to="/html-tags/abbr" ariaLabel={"Transition to abbr tag page"}>{"<abbr> Tag"}</TransitionButton>
         </p>
       </Card>
     </Container>
