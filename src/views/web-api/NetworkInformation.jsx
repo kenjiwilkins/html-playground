@@ -201,24 +201,6 @@ function NetworkInformation() {
         </div>
       </div>
 
-      <div className="bg-yellow-50 border border-yellow-200 rounded p-4 mb-4">
-        <h3 className="font-semibold text-yellow-900 mb-2">
-          Browser Support:
-        </h3>
-        <p className="text-yellow-800 text-sm mb-2">
-          The Network Information API is supported in:
-        </p>
-        <ul className="text-yellow-800 text-sm list-disc list-inside">
-          <li>Chrome 61+</li>
-          <li>Edge 79+</li>
-          <li>Opera 48+</li>
-          <li>Chrome Android 61+</li>
-        </ul>
-        <p className="text-yellow-800 text-sm mt-2">
-          Not supported in Firefox and Safari.
-        </p>
-      </div>
-
       <div className="bg-blue-50 border border-blue-200 rounded p-4">
         <h3 className="font-semibold text-blue-900 mb-2">Use Cases:</h3>
         <ul className="text-blue-800 text-sm list-disc list-inside space-y-1">

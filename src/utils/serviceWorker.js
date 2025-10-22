@@ -84,6 +84,7 @@ function registerValidSW(swUrl, config) {
 function checkValidServiceWorker(swUrl, config) {
   // Check if the service worker can be found
   fetch(swUrl, {
+    cache: 'no-cache',
     headers: { 'Service-Worker': 'script' },
   })
     .then((response) => {
