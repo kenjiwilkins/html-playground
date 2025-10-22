@@ -28,10 +28,13 @@ function Index() {
               <TransitionButton to="/html-tags" ariaLabel="Navigate to HTML tags examples">HTML Tags</TransitionButton>
             </li>
             <li>
+              <TransitionButton to="/html-document" ariaLabel="Navigate to HTML document examples">HTML Document</TransitionButton>
+            </li>
+            <li>
               <TransitionButton to="/css-styles" ariaLabel="Navigate to CSS styles examples">CSS Styles</TransitionButton>
             </li>
             <li>
-              <TransitionButton to="/js-scripts" ariaLabel="Navigate to JavaScript scripts examples">JS Scripts</TransitionButton>
+              <TransitionButton to="/web-api" ariaLabel="Navigate to Web API examples">Web API</TransitionButton>
             </li>
             <li>
               <TransitionButton to="/responsive-design" ariaLabel="Navigate to responsive design examples">Responsive Design</TransitionButton>

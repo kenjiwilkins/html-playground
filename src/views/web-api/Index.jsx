@@ -4,17 +4,14 @@ import { TransitionButton } from "../../components";
 
 function Index() {
   useEffect(() => {
-    document.title = "JS Scripts";
+    document.title = "Web APIs";
   }, []);
   return (
     <>
       <div className="flex">
         <ul className="p-4 pr-6 w-48">
           <li>
-            <TransitionButton to="/js-scripts/dynamic-favicon" ariaLabel="View dynamic favicon example">Dynamic Favicon</TransitionButton>
-          </li>
-          <li>
-            <TransitionButton to="/js-scripts/view-transition" ariaLabel="View transition API example">View Transition API</TransitionButton>
+            <TransitionButton to="/web-api/view-transition" ariaLabel="View transition API example">View Transition API</TransitionButton>
           </li>
         </ul>
         <Outlet />

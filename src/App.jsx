@@ -1,11 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import Index from "./views/Index";
 import HtmlTagsIndex from "./views/html-tags/Index";
+import HtmlDocumentIndex from "./views/html-document/Index";
 import CssStylesIndex from "./views/css-styles/Index";
-import JsScriptsIndex from "./views/js-scripts/Index";
+import WebApiIndex from "./views/web-api/Index";
 import ResponsiveIndex from "./views/responsive-design/Index";
 import DynamicFavicon from "./views/DynamicFavicon";
-import ViewTransition from "./views/js-scripts/ViewTransition";
+import ViewTransition from "./views/web-api/ViewTransition";
 import Anchor from "./views/html-tags/Anchor";
 import Abbr from "./views/html-tags/Abbr";
 import Address from "./views/html-tags/Address";
@@ -111,13 +112,15 @@ function App() {
             <Route path="/css-styles/dir" element={<Direction />}/>
             <Route path="/css-styles/target" element={<Target />}/>
           </Route>
-          <Route path="/js-scripts" element={<JsScriptsIndex />}>
+          <Route path="/html-document" element={<HtmlDocumentIndex />}>
             <Route
-              path="/js-scripts/dynamic-favicon"
+              path="/html-document/dynamic-favicon"
               element={<DynamicFavicon />}
             />
+          </Route>
+          <Route path="/web-api" element={<WebApiIndex />}>
             <Route
-              path="/js-scripts/view-transition"
+              path="/web-api/view-transition"
               element={<ViewTransition />}
             />
           </Route>
