@@ -12,7 +12,6 @@ const TRANSITION_TYPES = [
 
 function ViewTransition() {
   const [currentTransition, setCurrentTransition] = useState("fade");
-  const [previewKey, setPreviewKey] = useState(0);
 
   useEffect(() => {
     // Load current transition from cookie
@@ -28,11 +27,6 @@ function ViewTransition() {
 
     // Apply transition immediately
     applyTransition(transitionType);
-  };
-
-  const triggerPreview = () => {
-    // Trigger a view transition for preview
-    setPreviewKey((prev) => prev + 1);
   };
 
   return (
@@ -98,38 +92,6 @@ function ViewTransition() {
             </div>
           ))}
         </div>
-      </div>
-
-      <div className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">Test Your Transition</h2>
-        <p className="text-gray-700 mb-4">
-          Navigate to other pages using the main navigation to see your selected transition in action!
-        </p>
-
-        <div className="bg-gray-50 border border-gray-300 rounded-lg p-6">
-          <h3 className="text-lg font-semibold mb-3">Preview Demo</h3>
-          <div
-            key={previewKey}
-            className="bg-white border-2 border-dashed border-gray-300 rounded p-8 mb-4 text-center"
-          >
-            <p className="text-2xl font-bold text-gray-700">Preview Content #{previewKey}</p>
-            <p className="text-gray-500 mt-2">This content will animate when you click the button below</p>
-          </div>
-          <button
-            onClick={triggerPreview}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded transition-colors"
-          >
-            Trigger Preview
-          </button>
-        </div>
-      </div>
-
-      <div className="bg-yellow-50 border border-yellow-200 rounded p-4">
-        <h3 className="font-semibold text-yellow-900 mb-2">Browser Support:</h3>
-        <p className="text-yellow-800 text-sm">
-          The View Transition API is supported in Chrome 111+, Edge 111+, and Opera 97+.
-          For browsers that don&apos;t support it, navigation will work normally without animations.
-        </p>
       </div>
     </div>
   );
