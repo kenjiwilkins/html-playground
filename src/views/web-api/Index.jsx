@@ -13,6 +13,9 @@ function Index() {
           <li>
             <TransitionButton to="/web-api/view-transition" ariaLabel="View transition API example">View Transition API</TransitionButton>
           </li>
+          <li>
+            <TransitionButton to="/web-api/network-information" ariaLabel="Network Information API example">Network Information API</TransitionButton>
+          </li>
         </ul>
         <Outlet />
       </div>

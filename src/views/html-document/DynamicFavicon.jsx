@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import defaultIcon from "../assets/default.svg";
-import successIcon from "../assets/success.svg";
-import failIcon from "../assets/fail.svg";
-import defaultRedIcon from "../assets/default-red.svg";
-import { Button, Card, Container } from "../components";
+import defaultIcon from "../../assets/default.svg";
+import successIcon from "../../assets/success.svg";
+import failIcon from "../../assets/fail.svg";
+import defaultRedIcon from "../../assets/default-red.svg";
+import { Button, Card, Container } from "../../components";
 import { useRef } from "react";
 
 function DynamicFavicon() {
