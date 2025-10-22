@@ -5,8 +5,9 @@ import HtmlDocumentIndex from "./views/html-document/Index";
 import CssStylesIndex from "./views/css-styles/Index";
 import WebApiIndex from "./views/web-api/Index";
 import ResponsiveIndex from "./views/responsive-design/Index";
-import DynamicFavicon from "./views/DynamicFavicon";
+import DynamicFavicon from "./views/html-document/DynamicFavicon";
 import ViewTransition from "./views/web-api/ViewTransition";
+import NetworkInformation from "./views/web-api/NetworkInformation";
 import Anchor from "./views/html-tags/Anchor";
 import Abbr from "./views/html-tags/Abbr";
 import Address from "./views/html-tags/Address";
@@ -122,6 +123,10 @@ function App() {
             <Route
               path="/web-api/view-transition"
               element={<ViewTransition />}
+            />
+            <Route
+              path="/web-api/network-information"
+              element={<NetworkInformation />}
             />
           </Route>
           <Route path="/responsive-design" element={<ResponsiveIndex />}>
