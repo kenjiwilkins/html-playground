@@ -46,5 +46,13 @@ export function getCookie(name) {
  * @param {string} name - Cookie name
  */
 export function deleteCookie(name) {
-  document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;`;
+  // Match the same attributes used in setCookie for proper deletion
+  let cookieString = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;SameSite=Lax`;
+
+  // Add Secure flag if using HTTPS
+  if (window.location.protocol === 'https:') {
+    cookieString += ';Secure';
+  }
+
+  document.cookie = cookieString;
 }
