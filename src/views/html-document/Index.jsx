@@ -1,16 +1,17 @@
 import { useEffect } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import { TransitionButton } from "../../components";
 
 function Index() {
   useEffect(() => {
-    document.title = "JS Scripts";
+    document.title = "HTML Document";
   }, []);
   return (
     <>
       <div className="flex">
         <ul className="p-4 pr-6 w-48">
           <li>
-            <Link to="/js-scripts/dynamic-favicon">Dynamic Favicon</Link>
+            <TransitionButton to="/html-document/dynamic-favicon" ariaLabel="View dynamic favicon example">Dynamic Favicon</TransitionButton>
           </li>
         </ul>
         <Outlet />

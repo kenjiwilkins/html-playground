@@ -1,6 +1,6 @@
-import { useMemo, useRef, useState } from "react";
-import "./Progress.css";
-import { useEffect } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import "./progress.css";
+import { Button } from "@/components/Button";
 
 function Progress() {
   const [progress, setProgress] = useState(60);
@@ -30,30 +30,33 @@ function Progress() {
 
   // draggable progress bar
   const [dragProgress, setDragProgress] = useState(0);
-  const dragProgressRef = useRef(null);
-  const dragProgressContainerRef = useRef(null);
-  function handleDragStart(e) {
-    const rect = e.target.getBoundingClientRect();
+  const progressBarElement = useRef(null);
+  const handleDrag = useCallback((e) => {
+    const rect = progressBarElement.current.getBoundingClientRect();
     const offsetX = e.clientX - rect.left;
     const progress = (offsetX / rect.width) * 100;
     setDragProgress(progress);
-    e.target.addEventListener("mousemove", handleDrag);
-    e.target.addEventListener("mouseup", handleDragEnd);
-  }
-  function handleDrag(e) {
-    const rect = e.target.getBoundingClientRect();
-    const offsetX = e.clientX - rect.left;
-    const progress = (offsetX / rect.width) * 100;
-    setDragProgress(progress);
-  }
-  function handleDragEnd(e) {
-    e.target.removeEventListener("mousemove", handleDrag);
-    e.target.removeEventListener("mouseup", handleDragEnd);
-  }
-  useEffect(() => {
-    const progressBarElement = document.querySelector(".progress-bar");
-    progressBarElement.addEventListener("mousedown", handleDragStart);
   }, []);
+  const handleDragEnd = useCallback(() => {
+    document.removeEventListener("pointermove", handleDrag);
+    document.removeEventListener("pointerup", handleDragEnd);
+  }, [handleDrag]);
+  useEffect(() => {
+    if (!progressBarElement.current) return;
+    const progressBar = progressBarElement.current;
+    function handleDragStart(e) {
+      const rect = progressBarElement.current.getBoundingClientRect();
+      const offsetX = e.clientX - rect.left;
+      const progress = (offsetX / rect.width) * 100;
+      setDragProgress(progress);
+      document.addEventListener("pointermove", handleDrag);
+      document.addEventListener("pointerup", handleDragEnd);
+    }
+    progressBar.addEventListener("pointerdown", handleDragStart);
+    return () => {
+      progressBar.removeEventListener("pointerdown", handleDragStart);
+    };
+  }, [handleDrag, handleDragEnd]);
 
   return (
     <div className="flex flex-col items-center align-center">
@@ -62,19 +65,19 @@ function Progress() {
         {progress}%
       </label>
       <div className="flex items-center gap-2">
-        <button
+        <Button
           className="p-2 bg-gray-900 text-white rounded"
           onClick={() => handleProgressChange(progress - 10)}
         >
           -10
-        </button>
+        </Button>
         <progress id="progress-1" value={progress} max="100"></progress>
-        <button
+        <Button
           className="p-2 bg-gray-900 text-white rounded"
           onClick={() => handleProgressChange(progress + 10)}
         >
           +10
-        </button>
+        </Button>
       </div>
       <div className="flex flex-col items-center align-center">
         <h2>Progress without value</h2>
@@ -84,13 +87,13 @@ function Progress() {
           aria-describedby="progress-2"
           aria-busy={!isLoadStateComplete}
         >
-          <button
+          <Button
             className="p-2 bg-gray-900 disabled:bg-gray-300  text-white rounded"
             disabled={!isLoadStateComplete}
             onClick={() => updateProgress()}
           >
             Start
-          </button>
+          </Button>
           {!isLoadStateComplete && (
             <progress
               aria-label="file load progress"
@@ -109,6 +112,7 @@ function Progress() {
         <h2>Draggable</h2>
         <div className="flex items-center gap-2">
           <progress
+            ref={progressBarElement}
             className="progress progress-bar"
             value={dragProgress}
             max="100"
