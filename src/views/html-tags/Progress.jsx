@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import "./progress.css";
 import { Button } from "@/components/Button";
 
@@ -31,16 +31,16 @@ function Progress() {
   // draggable progress bar
   const [dragProgress, setDragProgress] = useState(0);
   const progressBarElement = useRef(null);
-  function handleDrag(e) {
+  const handleDrag = useCallback((e) => {
     const rect = progressBarElement.current.getBoundingClientRect();
     const offsetX = e.clientX - rect.left;
     const progress = (offsetX / rect.width) * 100;
     setDragProgress(progress);
-  }
-  function handleDragEnd() {
+  }, []);
+  const handleDragEnd = useCallback(() => {
     document.removeEventListener("pointermove", handleDrag);
     document.removeEventListener("pointerup", handleDragEnd);
-  }
+  }, [handleDrag]);
   useEffect(() => {
     if (!progressBarElement.current) return;
     const progressBar = progressBarElement.current;
@@ -56,7 +56,7 @@ function Progress() {
     return () => {
       progressBar.removeEventListener("pointerdown", handleDragStart);
     };
-  }, []);
+  }, [handleDrag, handleDragEnd]);
 
   return (
     <div className="flex flex-col items-center align-center">

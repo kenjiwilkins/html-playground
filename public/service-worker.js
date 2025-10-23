@@ -1,12 +1,10 @@
-/* eslint-disable no-restricted-globals */
-
 // Service Worker for HTML Playground
 // This service worker provides basic caching and offline support
 
 const CACHE_NAME = 'html-playground-v1';
 
 // Install event - skip waiting to activate immediately
-self.addEventListener('install', (event) => {
+self.addEventListener('install', () => {
   console.log('Service Worker: Installing');
   self.skipWaiting();
 });

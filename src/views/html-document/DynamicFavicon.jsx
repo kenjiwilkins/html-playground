@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import defaultIcon from "../../assets/default.svg";
 import successIcon from "../../assets/success.svg";
 import failIcon from "../../assets/fail.svg";
 import defaultRedIcon from "../../assets/default-red.svg";
 import { Button, Card, Container } from "../../components";
-import { useRef } from "react";
 
 function DynamicFavicon() {
   const [mode, setMode] = useState("default");
@@ -12,7 +11,7 @@ function DynamicFavicon() {
     return mode === givenMode;
   };
   const intervalRef = useRef(null);
-  function updateFavicon() {
+  const updateFavicon = useCallback(() => {
     clearInterval(intervalRef.current);
     let link = document.querySelector("link[rel*='icon']");
     if (link) {
@@ -30,7 +29,7 @@ function DynamicFavicon() {
           link.href = defaultIcon;
       }
     }
-  }
+  }, [mode]);
   function updateFaviconRed() {
     let link = document.querySelector("link[rel*='icon']");
     if (link) {
@@ -44,7 +43,7 @@ function DynamicFavicon() {
 
   useEffect(() => {
     updateFavicon();
-  }, [mode]);
+  }, [updateFavicon]);
   return (
     <>
       <Container title="Dynamic Favicon">
