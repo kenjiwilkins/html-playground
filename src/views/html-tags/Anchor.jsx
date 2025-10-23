@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { Card } from "../../components/Card";
 import sampleImage from "../../assets/sample.jpeg";
-import anchorHtml from "./anchor.html";
+import anchorHtml from "./anchor.html?url";
 import { Container } from "../../components";
 
 const basicLink = "https://example.com";

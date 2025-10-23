@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Container, Card } from "../../components";
-import baseHtml from "./base.html";
+import baseHtml from "./base.html?url";
 
 function BasePage() {
   const [html, setHtml] = useState("");

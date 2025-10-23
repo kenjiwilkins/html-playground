@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Container, Card } from "../../components";
-import childHtml from "./iframe-child.html";
+import childHtml from "./iframe-child.html?url";
 
 export default function IframePage() {
   const [width, setWidth] = useState(500);

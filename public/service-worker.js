@@ -1,24 +1,12 @@
-/* eslint-disable no-restricted-globals */
-
 // Service Worker for HTML Playground
 // This service worker provides basic caching and offline support
 
 const CACHE_NAME = 'html-playground-v1';
-const urlsToCache = [
-  '/',
-  '/index.html',
-];
 
-// Install event - cache essential resources
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => {
-        console.log('Service Worker: Cache opened');
-        return cache.addAll(urlsToCache);
-      })
-      .then(() => self.skipWaiting()) // Activate immediately
-  );
+// Install event - skip waiting to activate immediately
+self.addEventListener('install', () => {
+  console.log('Service Worker: Installing');
+  self.skipWaiting();
 });
 
 // Activate event - clean up old caches
@@ -37,34 +25,42 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch event - serve from cache, fallback to network
+// Fetch event - network first, fallback to cache
 self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request)
+    fetch(event.request)
       .then((response) => {
-        // Cache hit - return response
-        if (response) {
+        // Check if valid response
+        if (!response || response.status !== 200) {
           return response;
         }
 
-        // Clone the request
-        const fetchRequest = event.request.clone();
+        // Clone the response
+        const responseToCache = response.clone();
 
-        return fetch(fetchRequest).then((response) => {
-          // Check if valid response
-          if (!response || response.status !== 200 || response.type !== 'basic') {
+        // Cache the new response
+        caches.open(CACHE_NAME).then((cache) => {
+          cache.put(event.request, responseToCache);
+        });
+
+        return response;
+      })
+      .catch(() => {
+        // Network failed, try cache
+        return caches.match(event.request).then((response) => {
+          if (response) {
             return response;
           }
 
-          // Clone the response
-          const responseToCache = response.clone();
+          // If requesting HTML, return cached index
+          if (event.request.mode === 'navigate') {
+            return caches.match('/');
+          }
 
-          caches.open(CACHE_NAME)
-            .then((cache) => {
-              cache.put(event.request, responseToCache);
-            });
-
-          return response;
+          return new Response('Offline - resource not cached', {
+            status: 503,
+            statusText: 'Service Unavailable'
+          });
         });
       })
   );
